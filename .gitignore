@@ -1,0 +1,7 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+<<<<<<< HEAD
+*.import
+=======
+>>>>>>> 9556267 (Init Setup)

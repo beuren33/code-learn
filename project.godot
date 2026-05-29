@@ -1,0 +1,44 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="CodeLearn"
+<<<<<<< HEAD
+run/main_scene="uid://bn8ckc5thujbo"
+config/features=PackedStringArray("4.6", "Mobile")
+config/icon="res://icon.svg"
+
+[autoload]
+
+SaveManager="uid://bmsjrwj4ovanc"
+GameManager="uid://3wob2tu8qwge"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot-sqlite/plugin.cfg")
+
+=======
+config/features=PackedStringArray("4.6", "Mobile")
+config/icon="res://icon.svg"
+
+>>>>>>> 9556267 (Init Setup)
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+<<<<<<< HEAD
+textures/canvas_textures/default_texture_filter=0
+=======
+>>>>>>> 9556267 (Init Setup)
+rendering_device/driver.windows="d3d12"
+renderer/rendering_method="mobile"
