@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://mppku7d6676q"]
+
+[ext_resource type="PackedScene" uid="uid://8pvlli8bfim2" path="res://scenes/ui/levels/projeto_tel1.ldtk" id="1_0ej1b"]
+
+[node name="projeto_tel1" unique_id=37120093 instance=ExtResource("1_0ej1b")]

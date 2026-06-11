@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c3eisps3twi48"
-path="res://.godot/imported/ceu_entardecer_cidade_1.png-60c39deec7d2325e6a4dac98fd2f5ec0.ctex"
+path="res://.godot/imported/ceu_entardecer_cidade_1.png-0cf0fbc199c430d17ac6ff952706403e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/tilesets/ceu_entardecer_cidade_1.png"
-dest_files=["res://.godot/imported/ceu_entardecer_cidade_1.png-60c39deec7d2325e6a4dac98fd2f5ec0.ctex"]
+source_file="res://scenes/ui/levels/tilesets/ceu_entardecer_cidade_1.png"
+dest_files=["res://.godot/imported/ceu_entardecer_cidade_1.png-0cf0fbc199c430d17ac6ff952706403e.ctex"]
 
 [params]
 

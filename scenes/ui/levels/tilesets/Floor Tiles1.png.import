@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dem4y081iy0fn"
-path="res://.godot/imported/Floor Tiles1.png-475c0f30a241aadcf5ffa0ff6576cfad.ctex"
+path="res://.godot/imported/Floor Tiles1.png-3c7084ac3332e608638ac021fb9c56fd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/tilesets/Floor Tiles1.png"
-dest_files=["res://.godot/imported/Floor Tiles1.png-475c0f30a241aadcf5ffa0ff6576cfad.ctex"]
+source_file="res://scenes/ui/levels/tilesets/Floor Tiles1.png"
+dest_files=["res://.godot/imported/Floor Tiles1.png-3c7084ac3332e608638ac021fb9c56fd.ctex"]
 
 [params]
 

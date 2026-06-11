@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://12sqeh17y0o5"
-path="res://.godot/imported/highway-trees.png-566e3c8317826518892e9e1e2de8e04b.ctex"
+path="res://.godot/imported/highway-trees.png-3978c7a57ae26cb81ed40fc26717249a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/tilesets/highway-trees.png"
-dest_files=["res://.godot/imported/highway-trees.png-566e3c8317826518892e9e1e2de8e04b.ctex"]
+source_file="res://scenes/ui/levels/tilesets/highway-trees.png"
+dest_files=["res://.godot/imported/highway-trees.png-3978c7a57ae26cb81ed40fc26717249a.ctex"]
 
 [params]
 

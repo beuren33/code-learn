@@ -1,0 +1,149 @@
+[gd_scene format=3 uid="uid://5b0168fst8xp"]
+
+[ext_resource type="PackedScene" uid="uid://8pvlli8bfim2" path="res://scenes/ui/levels/projeto_tel1.ldtk" id="1_ldtk"]
+[ext_resource type="PackedScene" uid="uid://lcjb5pntrlrt" path="res://characters/personagem_storyboard.tscn" id="2_pers"]
+[ext_resource type="SpriteFrames" uid="uid://cdroneagro01" path="res://characters/drone_agro.tres" id="4_drone_sf"]
+[ext_resource type="Texture2D" uid="uid://b1vp4g5cx0rf5" path="res://characters/exclamacao.png" id="5_excl"]
+[ext_resource type="Script" uid="uid://cxc772s1l4jiw" path="res://characters/drone_storyboard.gd" id="6_drone_gd"]
+[ext_resource type="Script" uid="uid://hbhrrqshiol6" path="res://characters/storyboard_director.gd" id="7_3sajq"]
+[ext_resource type="Script" uid="uid://bntr8cre3bexq" path="res://characters/exclamacao.gd" id="7_excl_gd"]
+
+[sub_resource type="GDScript" id="GDScript_ctrl"]
+script/source = "extends Node2D
+# Controlador de FUNDOS dos levels (embutido na cena para não depender de
+# nome de arquivo). Remove fundos duplicados e recria um por level, atras de tudo.
+
+const BG_NODE_NAME := \"BG Image\"
+const BG_Z_INDEX := -4096  # minimo permitido pelo Godot; fica atras de tudo
+
+const BACKGROUNDS := {
+	\"Level_0\": {
+		\"path\": \"res://scenes/ui/levels/tilesets/background_sky_windmill.png\",
+		\"top_left\": Vector2(0, 0),
+		\"scale\": Vector2(0.11904762, 0.11904762),
+		\"crop_rect\": Rect2i(240, 0, 2688, 1344),
+	},
+	\"Level_1\": {
+		\"path\": \"res://scenes/ui/levels/tilesets/Back_2.png\",
+		\"top_left\": Vector2(0, 0),
+		\"scale\": Vector2(0.11904762, 0.11904762),
+		\"crop_rect\": Rect2i(240, 0, 2688, 1344),
+	},
+	\"Level_2\": {
+		\"path\": \"res://scenes/ui/levels/tilesets/highway-sky.png\",
+		\"top_left\": Vector2(0, 0),
+		\"scale\": Vector2(0.8, 0.8),
+		\"crop_rect\": Rect2i(0, 20, 400, 200),
+	},
+	\"Level_3\": {
+		\"path\": \"res://scenes/ui/levels/tilesets/ceu_entardecer_cidade_1.png\",
+		\"top_left\": Vector2(0, 0),
+		\"scale\": Vector2(0.25, 0.25),
+		\"crop_rect\": Rect2i(0, 0, 1280, 640),
+	},
+	\"Level_4\": {
+		\"path\": \"res://scenes/ui/levels/tilesets_cidade/cidade_casas_up49.png\",
+		\"top_left\": Vector2(0, 0),
+		\"scale\": Vector2(0.125, 0.125),
+		\"crop_rect\": Rect2i(0, 80, 2560, 1280),
+	},
+	\"Level_5\": {
+		\"path\": \"res://scenes/ui/levels/tilesets_cidade/mercado_background_v2.png\",
+		\"top_left\": Vector2(0, 0),
+		\"scale\": Vector2(0.125, 0.125),
+		\"crop_rect\": Rect2i(0, 80, 2560, 1280),
+	},
+}
+
+
+func _ready() -> void:
+	for level_name in BACKGROUNDS:
+		var level_node := _find_level(level_name)
+		if level_node == null:
+			push_warning(\"Level nao encontrado na cena: %s\" % level_name)
+			continue
+		_apply_background(level_node, BACKGROUNDS[level_name])
+
+
+func _find_level(level_name: String) -> Node2D:
+	var found := find_child(level_name, true, false)
+	return found as Node2D
+
+
+func _apply_background(level_node: Node2D, config: Dictionary) -> void:
+	var existing := level_node.get_node_or_null(BG_NODE_NAME)
+	if existing != null:
+		existing.free()
+	var texture: Texture2D = load(config[\"path\"])
+	if texture == null:
+		push_warning(\"Background nao encontrado: %s\" % config[\"path\"])
+		return
+	var sprite := Sprite2D.new()
+	sprite.name = BG_NODE_NAME
+	sprite.texture = texture
+	sprite.centered = false
+	sprite.position = config[\"top_left\"]
+	sprite.scale = config[\"scale\"]
+	sprite.region_enabled = true
+	sprite.region_rect = config[\"crop_rect\"]
+	sprite.z_index = BG_Z_INDEX
+	level_node.add_child(sprite)
+	level_node.move_child(sprite, 0)
+"
+
+[node name="Node2D" type="Node2D" unique_id=306462379]
+script = SubResource("GDScript_ctrl")
+
+[node name="projeto_tel1" parent="." unique_id=1498414431 instance=ExtResource("1_ldtk")]
+position = Vector2(16, 39)
+
+[node name="PersonagemStoryboard" parent="." unique_id=835910129 instance=ExtResource("2_pers")]
+position = Vector2(23, 135)
+animation = &"Interact_Side"
+frame_progress = 0.0
+distancia = 150.0
+repeticao = 2
+comecar_parado = true
+
+[node name="PersonagemTela4" parent="." unique_id=835910203 instance=ExtResource("2_pers")]
+position = Vector2(1378, 154)
+animation = &"Interact_Side"
+frame_progress = 0.0
+distancia = 140.0
+repeticao = 2
+comecar_parado = true
+
+[node name="ExclamacaoNpc" type="Sprite2D" parent="PersonagemTela4" unique_id=835910301]
+texture_filter = 1
+position = Vector2(0, -24)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_excl")
+
+[node name="DroneStoryboard" type="AnimatedSprite2D" parent="." unique_id=366296119]
+texture_filter = 1
+position = Vector2(191, 137)
+scale = Vector2(0.875, 0.7916667)
+sprite_frames = ExtResource("4_drone_sf")
+animation = &"DEATH"
+frame = 4
+frame_progress = 1.0
+script = ExtResource("6_drone_gd")
+altura_subida = 38.0
+velocidade_subida = 45.0
+largura_patrulha = 150.0
+
+[node name="Exclamacao" type="Sprite2D" parent="DroneStoryboard" unique_id=858374280]
+texture_filter = 1
+position = Vector2(1.1428571, -21.47368)
+scale = Vector2(0.7, 0.659)
+texture = ExtResource("5_excl")
+script = ExtResource("7_excl_gd")
+
+[node name="ExclamacaoCarro" type="Sprite2D" parent="." unique_id=1816211167]
+texture_filter = 1
+position = Vector2(383.4, 123.228004)
+scale = Vector2(0.9749996, 0.9232502)
+texture = ExtResource("5_excl")
+
+[node name="StoryboardDirector" type="Node2D" parent="." unique_id=1144519546]
+script = ExtResource("7_3sajq")
