@@ -1,0 +1,233 @@
+[gd_scene load_steps=9 format=3 uid="uid://b2finalcine7scene"]
+
+[ext_resource type="Script" path="res://tela-final/FinalScene.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://tela-final/assets/character_thumbs_up.png" id="2_char"]
+
+[sub_resource type="Gradient" id="grad_glow"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(1, 0.95, 0.7, 0.85, 1, 0.82, 0.5, 0.4, 1, 0.6, 0.3, 0)
+
+[sub_resource type="GradientTexture2D" id="tex_glow"]
+gradient = SubResource("grad_glow")
+width = 512
+height = 512
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[sub_resource type="CanvasItemMaterial" id="mat_glow_add"]
+blend_mode = 1
+
+[sub_resource type="Animation" id="anim_glow_pulse"]
+resource_name = "ambient_glow"
+length = 2.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ContentRoot/CharacterContainer/GlowAura:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.3, 2.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.45), Color(1, 1, 1, 0.8), Color(1, 1, 1, 0.45)]
+}
+
+[sub_resource type="AnimationLibrary" id="anim_lib"]
+_data = {
+"ambient_glow": SubResource("anim_glow_pulse")
+}
+
+[node name="FinalScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_script")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AmbienceParticles" type="CPUParticles2D" parent="."]
+position = Vector2(576, 700)
+emitting = false
+amount = 28
+lifetime = 8.0
+preprocess = 4.0
+emission_shape = 3
+emission_rect_extents = Vector2(600, 6)
+direction = Vector2(0, -1)
+spread = 16.0
+gravity = Vector2(0, -6)
+initial_velocity_min = 16.0
+initial_velocity_max = 46.0
+scale_amount_min = 1.0
+scale_amount_max = 3.0
+color = Color(1, 0.93, 0.72, 0.45)
+
+[node name="ContentRoot" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TitleLabel" type="Label" parent="ContentRoot"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.03
+anchor_right = 0.95
+anchor_bottom = 0.16
+grow_horizontal = 2
+mouse_filter = 2
+modulate = Color(1, 1, 1, 0)
+theme_override_colors/font_color = Color(1, 0.94, 0.65, 1)
+theme_override_colors/font_outline_color = Color(0.4, 0.18, 0.05, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 84
+text = "PARABÉNS!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="MessageLabel" type="Label" parent="ContentRoot"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.20
+anchor_right = 0.95
+anchor_bottom = 0.28
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.97, 0.97, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.75)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 46
+text = ""
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="CharacterContainer" type="Control" parent="ContentRoot"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.30
+anchor_top = 0.29
+anchor_right = 0.70
+anchor_bottom = 0.87
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="GlowAura" type="TextureRect" parent="ContentRoot/CharacterContainer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.55
+anchor_top = -0.10
+anchor_right = 1.55
+anchor_bottom = 1.10
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+modulate = Color(1, 1, 1, 0)
+material = SubResource("mat_glow_add")
+texture = SubResource("tex_glow")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="CharacterSprite" type="TextureRect" parent="ContentRoot/CharacterContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture_filter = 1
+modulate = Color(1, 1, 1, 0)
+texture = ExtResource("2_char")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CelebrationSparkles" type="CPUParticles2D" parent="ContentRoot/CharacterContainer"]
+position = Vector2(230, 175)
+emitting = false
+amount = 64
+lifetime = 1.9
+one_shot = true
+explosiveness = 0.4
+emission_shape = 1
+emission_sphere_radius = 190.0
+direction = Vector2(0, -1)
+spread = 180.0
+gravity = Vector2(0, 22)
+initial_velocity_min = 90.0
+initial_velocity_max = 230.0
+scale_amount_min = 2.0
+scale_amount_max = 5.0
+color = Color(1, 0.92, 0.55, 1)
+
+[node name="ThanksLabel" type="Label" parent="ContentRoot"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.88
+anchor_right = 0.95
+anchor_bottom = 0.97
+grow_horizontal = 2
+mouse_filter = 2
+modulate = Color(1, 1, 1, 0)
+theme_override_colors/font_color = Color(0.92, 0.96, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.75)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 44
+text = "Obrigado por jogar."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Audio" type="Node" parent="."]
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="Audio"]
+volume_db = -8.0
+bus = &"Master"
+
+[node name="AchievementSfx" type="AudioStreamPlayer" parent="Audio"]
+volume_db = -4.0
+bus = &"Master"
+
+[node name="FadeSfx" type="AudioStreamPlayer" parent="Audio"]
+volume_db = -10.0
+bus = &"Master"
+
+[node name="FadeLayer" type="CanvasLayer" parent="."]
+layer = 100
+
+[node name="FadeRect" type="ColorRect" parent="FadeLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("anim_lib")
+}
