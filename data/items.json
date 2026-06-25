@@ -1,0 +1,20 @@
+{
+  "items": [
+	{"id": "chave_de_fenda",      "nome": "Chave de Fenda",         "raridade": "cinza",   "custo": 0,   "tipo": "ferramenta", "descricao": "Item inicial, útil para consertar robôs simples"},
+	{"id": "luva_lazer",          "nome": "Luva de Lazer",          "raridade": "azul",    "custo": 0,   "tipo": "arma",       "descricao": "Drop do Robô 1 — usada para derrotar inimigos"},
+	{"id": "atuadores",           "nome": "Atuadores",              "raridade": "cinza",   "custo": 0,   "tipo": "componente",  "descricao": "Drop do Robô 1 — peça para montar o robô aliado"},
+	{"id": "sensores",            "nome": "Sensores",               "raridade": "cinza",   "custo": 0,   "tipo": "componente",  "descricao": "Drop do Robô 2 — peça para montar o robô aliado"},
+	{"id": "bateria",             "nome": "Bateria",                "raridade": "azul",    "custo": 0,   "tipo": "componente",  "descricao": "Drop do Robô 3 — peça para montar o robô aliado"},
+	{"id": "ferro",               "nome": "Ferro",                  "raridade": "cinza",   "custo": 0,   "tipo": "componente",  "descricao": "Drop do Robô 4 — peça para montar o robô aliado"},
+	{"id": "super_controle",      "nome": "Super Controle Remoto",  "raridade": "roxa",    "custo": 0,   "tipo": "ferramenta", "descricao": "Encontrado na loja — reprograma robôs inimigos"},
+	{"id": "kit_ferramentas",     "nome": "Kit de Ferramentas",     "raridade": "azul",    "custo": 0,   "tipo": "ferramenta", "descricao": "Encontrado na loja — usado para reparos avançados"},
+	{"id": "chapeu_astronauta",   "nome": "Chapéu Astronauta",      "raridade": "azul",    "custo": 30,  "tipo": "chapeu",     "descricao": "Item cosmético da loja"},
+	{"id": "chapeu_robo",         "nome": "Chapéu Robô",            "raridade": "cinza",   "custo": 10,  "tipo": "chapeu",     "descricao": "Item cosmético da loja"},
+	{"id": "roupa_cientista",     "nome": "Roupa Cientista",        "raridade": "azul",    "custo": 40,  "tipo": "roupa",      "descricao": "Item cosmético da loja"},
+	{"id": "roupa_robo",          "nome": "Roupa Robô",             "raridade": "roxa",    "custo": 80,  "tipo": "roupa",      "descricao": "Item cosmético da loja"},
+	{"id": "roupa_espacial",      "nome": "Roupa Espacial",         "raridade": "dourada", "custo": 150, "tipo": "roupa",      "descricao": "Item cosmético da loja"},
+	{"id": "acess_antena",        "nome": "Antena",                 "raridade": "cinza",   "custo": 15,  "tipo": "acessorio",  "descricao": "Item cosmético da loja"},
+	{"id": "acess_jetpack",       "nome": "Jetpack",                "raridade": "roxa",    "custo": 100, "tipo": "acessorio",  "descricao": "Item cosmético da loja"},
+	{"id": "acess_escudo",        "nome": "Escudo Holográfico",     "raridade": "dourada", "custo": 200, "tipo": "acessorio",  "descricao": "Item cosmético da loja"}
+  ]
+}

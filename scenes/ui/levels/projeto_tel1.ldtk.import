@@ -1,0 +1,37 @@
+[remap]
+
+importer="ldtk.import"
+type="PackedScene"
+uid="uid://ctsnaa3ofqcjc"
+path="res://.godot/imported/projeto_tel1.ldtk-f64b34fdfa44f63232434551333570da.scn"
+
+[deps]
+
+files=["res://scenes/ui/levels/tilesets/tileset_16px.res", "res://scenes/ui/levels/tilesets/tileset_1px.res", "res://scenes/ui/levels/levels/Level_0.scn", "res://scenes/ui/levels/levels/Level_1.scn", "res://scenes/ui/levels/levels/Level_2.scn", "res://scenes/ui/levels/levels/Level_3.scn", "res://scenes/ui/levels/levels/Level_4.scn", "res://scenes/ui/levels/levels/Level_5.scn", "res://scenes/ui/levels/levels/Level_6.scn", "res://scenes/ui/levels/levels/Level_7.scn", "res://scenes/ui/levels/levels/Level_8.scn", "res://.godot/imported/projeto_tel1.ldtk-f64b34fdfa44f63232434551333570da.scn"]
+
+source_file="res://scenes/ui/levels/projeto_tel1.ldtk"
+dest_files=["res://.godot/imported/projeto_tel1.ldtk-f64b34fdfa44f63232434551333570da.scn", "res://scenes/ui/levels/tilesets/tileset_16px.res", "res://scenes/ui/levels/tilesets/tileset_1px.res", "res://scenes/ui/levels/levels/Level_0.scn", "res://scenes/ui/levels/levels/Level_1.scn", "res://scenes/ui/levels/levels/Level_2.scn", "res://scenes/ui/levels/levels/Level_3.scn", "res://scenes/ui/levels/levels/Level_4.scn", "res://scenes/ui/levels/levels/Level_5.scn", "res://scenes/ui/levels/levels/Level_6.scn", "res://scenes/ui/levels/levels/Level_7.scn", "res://scenes/ui/levels/levels/Level_8.scn", "res://.godot/imported/projeto_tel1.ldtk-f64b34fdfa44f63232434551333570da.scn"]
+
+[params]
+
+World=""
+group_world_layers=false
+Level=""
+pack_levels=true
+Layer=""
+layers_always_visible=false
+Tileset=""
+tileset_custom_data=false
+integer_grid_tilesets=false
+atlas_texture_type=0
+Entity=""
+resolve_entityrefs=true
+use_entity_placeholders=false
+Post Import=""
+tileset_post_import=""
+entities_post_import=""
+level_post_import=""
+world_post_import=""
+Debug=""
+force_tileset_reimport=false
+verbose_output=false

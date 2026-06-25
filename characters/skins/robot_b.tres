@@ -1,0 +1,55 @@
+[gd_resource type="SpriteFrames" load_steps=21 format=3]
+
+[ext_resource type="Texture2D" path="res://characters/skins/robot_b/idle/RobotB-Idle_01.png" id="t1"]
+[ext_resource type="Texture2D" path="res://characters/skins/robot_b/idle/RobotB-Idle_02.png" id="t2"]
+[ext_resource type="Texture2D" path="res://characters/skins/robot_b/idle/RobotB-Idle_03.png" id="t3"]
+[ext_resource type="Texture2D" path="res://characters/skins/robot_b/idle/RobotB-Idle_04.png" id="t4"]
+[ext_resource type="Texture2D" path="res://characters/skins/robot_b/run/RobotB-Run_01.png" id="t5"]
+[ext_resource type="Texture2D" path="res://characters/skins/robot_b/run/RobotB-Run_02.png" id="t6"]
+[ext_resource type="Texture2D" path="res://characters/skins/robot_b/run/RobotB-Run_03.png" id="t7"]
+[ext_resource type="Texture2D" path="res://characters/skins/robot_b/run/RobotB-Run_04.png" id="t8"]
+[ext_resource type="Texture2D" path="res://characters/skins/robot_b/death/RobotB-Death_01.png" id="t9"]
+[ext_resource type="Texture2D" path="res://characters/skins/robot_b/death/RobotB-Death_02.png" id="t10"]
+[ext_resource type="Texture2D" path="res://characters/skins/robot_b/death/RobotB-Death_03.png" id="t11"]
+[ext_resource type="Texture2D" path="res://characters/skins/robot_b/death/RobotB-Death_04.png" id="t12"]
+[ext_resource type="Texture2D" path="res://characters/skins/robot_b/death/RobotB-Death_05.png" id="t13"]
+[ext_resource type="Texture2D" path="res://characters/skins/robot_b/death/RobotB-Death_06.png" id="t14"]
+[ext_resource type="Texture2D" path="res://characters/skins/robot_b/death/RobotB-Death_07.png" id="t15"]
+[ext_resource type="Texture2D" path="res://characters/skins/robot_b/death/RobotB-Death_08.png" id="t16"]
+[ext_resource type="Texture2D" path="res://characters/skins/robot_b/death/RobotB-Death_09.png" id="t17"]
+[ext_resource type="Texture2D" path="res://characters/skins/robot_b/death/RobotB-Death_10.png" id="t18"]
+[ext_resource type="Texture2D" path="res://characters/skins/robot_b/death/RobotB-Death_11.png" id="t19"]
+[ext_resource type="Texture2D" path="res://characters/skins/robot_b/death/RobotB-Death_12.png" id="t20"]
+
+[resource]
+animations = [{
+"frames": [{"duration": 1.0, "texture": ExtResource("t1")}, {"duration": 1.0, "texture": ExtResource("t2")}, {"duration": 1.0, "texture": ExtResource("t3")}, {"duration": 1.0, "texture": ExtResource("t4")}],
+"loop": true,
+"name": &"Idle_Side",
+"speed": 6.0
+}, {
+"frames": [{"duration": 1.0, "texture": ExtResource("t5")}, {"duration": 1.0, "texture": ExtResource("t6")}, {"duration": 1.0, "texture": ExtResource("t7")}, {"duration": 1.0, "texture": ExtResource("t8")}],
+"loop": true,
+"name": &"Walk_Side",
+"speed": 10.0
+}, {
+"frames": [{"duration": 1.0, "texture": ExtResource("t1")}, {"duration": 1.0, "texture": ExtResource("t2")}, {"duration": 1.0, "texture": ExtResource("t3")}, {"duration": 1.0, "texture": ExtResource("t4")}],
+"loop": true,
+"name": &"Jump_Up",
+"speed": 6.0
+}, {
+"frames": [{"duration": 1.0, "texture": ExtResource("t1")}, {"duration": 1.0, "texture": ExtResource("t2")}, {"duration": 1.0, "texture": ExtResource("t3")}, {"duration": 1.0, "texture": ExtResource("t4")}],
+"loop": true,
+"name": &"Interact_Side",
+"speed": 6.0
+}, {
+"frames": [{"duration": 1.0, "texture": ExtResource("t1")}, {"duration": 1.0, "texture": ExtResource("t2")}, {"duration": 1.0, "texture": ExtResource("t3")}, {"duration": 1.0, "texture": ExtResource("t4")}],
+"loop": true,
+"name": &"Punch_Side",
+"speed": 6.0
+}, {
+"frames": [{"duration": 1.0, "texture": ExtResource("t9")}, {"duration": 1.0, "texture": ExtResource("t10")}, {"duration": 1.0, "texture": ExtResource("t11")}, {"duration": 1.0, "texture": ExtResource("t12")}, {"duration": 1.0, "texture": ExtResource("t13")}, {"duration": 1.0, "texture": ExtResource("t14")}, {"duration": 1.0, "texture": ExtResource("t15")}, {"duration": 1.0, "texture": ExtResource("t16")}, {"duration": 1.0, "texture": ExtResource("t17")}, {"duration": 1.0, "texture": ExtResource("t18")}, {"duration": 1.0, "texture": ExtResource("t19")}, {"duration": 1.0, "texture": ExtResource("t20")}],
+"loop": false,
+"name": &"Death",
+"speed": 10.0
+}]

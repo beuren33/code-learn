@@ -1,0 +1,176 @@
+[gd_scene format=3 uid="uid://bn8ckc5thujbo"]
+
+[ext_resource type="Script" uid="uid://cdp6xuh8wtju1" path="res://scripts/main_menu.gd" id="1_2ysvc"]
+[ext_resource type="Texture2D" uid="uid://bqraqpmwl4yua" path="res://scenes/ui/Menu/Back_cities.png" id="1_iwbf0"]
+[ext_resource type="Theme" uid="uid://clm8lyxdqmaog" path="res://scenes/ui/Menu/default_btn.tres" id="2_iwbf0"]
+[ext_resource type="Texture2D" uid="uid://dr2g4rkqhg0hc" path="res://scenes/ui/Menu/CODE_LEARN__3_-removebg-preview.png" id="3_iwbf0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xpiny"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bhu4a"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ysvc"]
+bg_color = Color(0.103842646, 0.114952154, 0.09026437, 0.6)
+expand_margin_top = 15.0
+expand_margin_bottom = 15.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e2per"]
+
+[sub_resource type="Animation" id="Animation_2ysvc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bg:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_xpiny"]
+resource_name = "reveal"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bg:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.23333329, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.36666662, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-480, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bhu4a"]
+_data = {
+&"RESET": SubResource("Animation_2ysvc"),
+&"reveal": SubResource("Animation_xpiny")
+}
+
+[node name="main" type="Control" unique_id=927853596]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2ysvc")
+
+[node name="bg" type="TextureRect" parent="." unique_id=1158827224]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_iwbf0")
+expand_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1554501602]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1018020705]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/HBoxContainer" unique_id=2016315262]
+layout_mode = 2
+theme_override_constants/separation = 60
+theme_override_styles/separator = SubResource("StyleBoxEmpty_xpiny")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1365986048]
+layout_mode = 2
+size_flags_horizontal = 2
+theme = ExtResource("2_iwbf0")
+theme_override_constants/separation = 21
+
+[node name="GAme_logo" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1151177441]
+layout_mode = 2
+texture = ExtResource("3_iwbf0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1848490237]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 28
+
+[node name="Startbtn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer" unique_id=2143113988]
+layout_mode = 2
+theme = ExtResource("2_iwbf0")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "START"
+flat = true
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer" unique_id=1381921034]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_bhu4a")
+
+[node name="Creditos" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer" unique_id=2074421197]
+layout_mode = 2
+theme = ExtResource("2_iwbf0")
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_2ysvc")
+text = "CREDITS"
+flat = true
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer" unique_id=1352798271]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_e2per")
+
+[node name="Quit" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer" unique_id=1483367707]
+layout_mode = 2
+theme = ExtResource("2_iwbf0")
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "QUIT GAME"
+flat = true
+
+[node name="personagem" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=646727326]
+layout_mode = 2
+expand_mode = 2
+flip_h = true
+
+[node name="anim" type="AnimationPlayer" parent="." unique_id=2038467454]
+libraries/ = SubResource("AnimationLibrary_bhu4a")
+autoplay = &"reveal"
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/Startbtn" to="." method="_on_startbtn_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/Creditos" to="." method="_on_creditos_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/Creditos" to="." method="_on_startbtn_2_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/Quit" to="." method="_on_startbtn_3_pressed"]

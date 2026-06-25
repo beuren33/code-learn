@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://cu4dqlsryvs3b"]
+
+[ext_resource type="Script" uid="uid://d2ip8aq27al1x" path="res://scripts/credits.gd" id="1_ka2rr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j2135"]
+bg_color = Color(0.004019165, 0.004019165, 0.004019165, 1)
+
+[node name="ScrollContainer" type="ScrollContainer" unique_id=632652269]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_j2135")
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+script = ExtResource("1_ka2rr")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=536471259]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer" unique_id=1966723164]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]
+[wave amp=20 freq=2][color=#00d9ff][font_size=40]CRÉDITOS[/font_size][/color][/wave]
+
+[font_size=24][b]Desenvolvimento[/b][/font_size]
+Matheus Beuren
+
+[font_size=24][b]Programação[/b][/font_size]
+Matheus Beuren
+
+[font_size=24][b]Arte Pixel[/b][/font_size]
+Equipe de Arte / Assets Próprios
+
+[font_size=24][b]Música e Efeitos Sonoros[/b][/font_size]
+Bibliotecas Gratuitas e Sons Autorais
+
+[font_size=24][b]Engine[/b][/font_size]
+Feito com a engine [color=#7cc7ff]Godot[/color]
+
+[font_size=24][b]Agradecimentos Especiais[/b][/font_size]
+Família, amigos e comunidade Godot
+
+[color=#aaaaaa]
+Obrigado por jogar!
+[/color]
+
+[font_size=18]
+© 2026 - Todos os direitos reservados
+[/font_size]
+[/center]"
+fit_content = true

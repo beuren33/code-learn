@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://b8a7lwu2ouksi"
+path="res://.godot/imported/16x32 All Animations.aseprite-cbdb23c4c277ad74e22b9956cb5d282b.res"
+
+[deps]
+
+source_file="res://characters/16x32/16x32 All Animations.aseprite"
+dest_files=["res://.godot/imported/16x32 All Animations.aseprite-cbdb23c4c277ad74e22b9956cb5d282b.res"]
+
+[params]
+
