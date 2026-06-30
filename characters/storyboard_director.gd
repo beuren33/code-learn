@@ -276,20 +276,7 @@ func _rodar_roteiro() -> void:
 
 
 func _mostrar_fim() -> void:
-	var camada := CanvasLayer.new()
-	camada.layer = 200
-	add_child(camada)
-	var fundo := ColorRect.new()
-	fundo.color = Color.BLACK
-	fundo.set_anchors_preset(Control.PRESET_FULL_RECT)
-	camada.add_child(fundo)
-	var lbl := Label.new()
-	lbl.text = "Obrigado por jogar!"
-	lbl.set_anchors_preset(Control.PRESET_FULL_RECT)
-	lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	lbl.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-	lbl.add_theme_font_size_override("font_size", 42)
-	camada.add_child(lbl)
+	get_tree().change_scene_to_file("res://scenes/ui/Credits/Credits.tscn")
 
 
 func _rodar_cena(c: Dictionary) -> void:
