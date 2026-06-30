@@ -276,8 +276,7 @@ func _rodar_roteiro() -> void:
 
 
 func _mostrar_fim() -> void:
-	get_tree().change_scene_to_file("res://scenes/ui/Credits/Credits.tscn")
-
+	get_tree().change_scene_to_file("res://tela-final/FinalScene.tscn")
 
 func _rodar_cena(c: Dictionary) -> void:
 	var level_nome: String = c["level"]

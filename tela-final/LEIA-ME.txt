@@ -1,0 +1,28 @@
+TELA FINAL DO JOGO
+=========================================
+
+Esta pasta foi feita para ser colocada DENTRO do projeto Godot do repositório
+(code-learn), na RAIZ, ao lado de "cenas", "dados", "projeto.godot" etc.
+Ou seja, o caminho final deve ficar:
+
+    code-learn/tela-final/FinalScene.tscn
+
+Conteúdo:
+  FinalScene.tscn   -> a cena da tela final
+  FinalScene.gd     -> o script da sequência
+  FinalScene.gd.uid -> id da cena (gerado pelo Godot)
+  assets/character_thumbs_up.png(.import) -> sprite do personagem
+
+Os caminhos internos já apontam para "res://tela-final/...", então a cena
+funciona assim que a pasta estiver na raiz do projeto.
+
+COMO TESTAR depois de adicionar:
+  1. Abra o projeto code-learn no Godot.
+  2. No painel FileSystem, abra tela-final/FinalScene.tscn.
+  3. Aperte F6 (rodar cena atual).
+
+OBSERVAÇÃO: a resolução/orientação da tela é definida pelo projeto principal
+(code-learn), não por esta pasta. A cena se adapta sozinha por usar anchors.
+
+Para chamar a tela final ao terminar o jogo, em qualquer script use:
+  get_tree().change_scene_to_file("res://tela-final/FinalScene.tscn")
