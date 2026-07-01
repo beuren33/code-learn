@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ea1m3nk8340c"
-path="res://.godot/imported/highway-builddings.png-860d94b9bdc6b71f43645dbdfd315835.ctex"
+path="res://.godot/imported/highway-builddings.png-c153d36bd768e2172ba0a7faa0bb1772.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/tilesets/highway-builddings.png"
-dest_files=["res://.godot/imported/highway-builddings.png-860d94b9bdc6b71f43645dbdfd315835.ctex"]
+source_file="res://scenes/ui/levels/tilesets/highway-builddings.png"
+dest_files=["res://.godot/imported/highway-builddings.png-c153d36bd768e2172ba0a7faa0bb1772.ctex"]
 
 [params]
 

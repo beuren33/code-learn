@@ -17,15 +17,8 @@ func _ready() -> void:
 	var text_box_size = text_node.size.y
 	var window_size = DisplayServer.window_get_size().y
 
-	margin.add_theme_constant_override(
-		"margin_top",
-		window_size + margin_increment
-	)
-
-	margin.add_theme_constant_override(
-		"margin_bottom",
-		window_size + margin_increment
-	)
+	margin.add_theme_constant_override("margin_top", window_size + margin_increment)
+	margin.add_theme_constant_override("margin_bottom", window_size + margin_increment)
 
 	var scroll_amount : int = ceil(
 		text_box_size * 0.75 +
@@ -33,14 +26,8 @@ func _ready() -> void:
 		margin_increment
 	)
 
-	tween.tween_property(
-		self,
-		"scroll_vertical",
-		scroll_amount,
-		credits_time
-	)
-
+	tween.tween_property(self, "scroll_vertical", scroll_amount, credits_time)
 	tween.finished.connect(_acabou)
 
 func _acabou() -> void:
-	print("acabou!")
+	get_tree().change_scene_to_file("res://scenes/ui/Menu/MainMenu.tscn")

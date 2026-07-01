@@ -1,0 +1,128 @@
+[
+  {
+	"fase": 1,
+	"id": 101,
+	"pergunta": "O que é um Motor DC e qual é a sua principal função em um projeto de robótica?",
+	"alternativas": ["É um componente que emite luz colorida", "É um componente que transforma energia elétrica em movimento", "É um sensor que detecta a presença de luz", "É o CÉREBRO do robô que guarda a programação"],
+	"correta": 0
+  },
+  {
+	"fase": 1,
+	"id": 102,
+	"pergunta": "Quando construímos um carrinho ou um carrossel robótico, usamos engrenagens e eixos. Qual é a função principal de uma engrenagem?",
+	"alternativas": ["Transmitir movimento e força entre duas partes da máquina", "Armazenar energia elétrica como uma bateria", "Fazer o robô falar", "Medir a temperatura do ambiente"],
+	"correta": 0
+  },
+  {
+	"id": 1,
+	"fase": 103,
+	"pergunta": "O drone está com uma hélice solta. Qual parte do drone é responsável por girar a hélice e fazer o drone voar?",
+	"alternativas": ["LED", "Motor", "Sensor de luz", "Cabo de energia"],
+	"correta": 1
+  },
+  {
+	"fase": 1,
+	"id": 104,
+	"pergunta": "Para acessar os circuitos internos do robô e consertá-lo, você precisa desparafusar algumas partes. Qual ferramenta mecânica é a mais adequada para essa tarefa?",
+	"alternativas": ["Martelo", "Alicate", "Chave de fenda", "Régua"],
+	"correta": 2
+  },
+  {
+	"fase": 1,
+	"id": 105,
+	"pergunta": "Você quer bloquear a porta. Qual mecanismo mecânico pode ser usado para travar a porta de forma segura?",
+	"alternativas": ["Uma polia", "Uma alavanca", "Uma fechadura com pino", "Uma roda"],
+	"correta": 2
+  },
+{
+	"fase": 2,
+	"id": 201,
+	"pergunta": "Qual componente eletrônico é responsavel por medir distância?",
+	"alternativas": ["Sensor ultrassônico", "LED", "Motor", "LDR"],
+	"correta": 0
+  },
+  {
+	"fase": 2,
+	"id": 202,
+	"pergunta": "Para impedir que outras pessoas entrem na loja, você decide criar um alarme simples. Qual componente eletrônico emite um som quando ativado?",
+	"alternativas": ["Um potenciômetro", "Um motor DC", "Um sensor de luz (LDR)", "Um buzzer"],
+	"correta": 3
+  },
+  {
+	"fase": 2,
+	"id": 203,
+	"pergunta": "A porta da loja está trancada por um sistema eletrônico. Você percebe que um LED está apagado. Qual é a função principal de um LED em um circuito eletrônico?",
+	"alternativas": ["Gerar calor", "Amplificar o som", "Armazenar energia", "Emitir luz"],
+	"correta": 3
+  },
+  {
+	"fase": 2,
+	"id": 204,
+	"pergunta": "O Sensor LDR (Resistor Dependente de Luz) é muito usado em projetos de Casas Inteligentes. O que ele faz?",
+	"alternativas": ["Ele mede a distância até um objeto", "Ele detecta a quantidade de luz no ambiente, podendo acender uma lâmpada quando escurece", "Ele mede a temperatura e a umidade do ar", "Ele detecta movimento de pessoas"],
+	"correta": 1
+  },
+  {
+	"fase": 2,
+	"id": 205,
+	"pergunta": "O braço robótico não está respondendo. Você percebe que um fio está solto no circuito que alimenta o motor. Qual é a função de um fio em um circuito eletrônico?",
+	"alternativas": ["Armazenar energia", "Controlar a velocidade do motor", "Conduzir a corrente elétrica", "Emitir luz"],
+	"correta": 2
+  },
+  {
+	"fase": 2,
+	"id": 206,
+	"pergunta": "O Boss está carregando um ataque de energia. Você percebe que ele usa um LED muito brilhante para indicar isso. Qual componente eletrônico pode ser usado para diminuir a intensidade da luz de um LED e, talvez, desativar o ataque?",
+	"alternativas": ["Um buzzer", "Um resistor", "Um motor DC", "Um sensor de toque"],
+	"correta": 1
+  },
+  {
+	"fase": 2,
+	"id": 207,
+	"pergunta": "A esteira de produção parou de funcionar. Você vê que um sensor de linha está sujo e não consegue ler o caminho. Qual é a função de um sensor de linha em uma esteira robótica?",
+	"alternativas": ["Medir a temperatura", "Gerar energia", "Emitir sons de alerta", "Detectar a presença de objetos ou seguir um caminho"],
+	"correta": 3
+  },
+  {
+	"fase": 3,
+	"id": 301,
+	"pergunta": "O que é um Loop (ou laço de repetição) na programação de um robô?",
+	"alternativas": ["É um erro no código que faz o robô parar de funcionar", "É um comando que faz o robô repetir uma ação várias vezes ou para sempre", "É o botão de ligar e desligar do Arduino", "É a velocidade máxima que o robô pode alcançar"],
+	"correta": 1
+  },
+  {
+	"fase": 3,
+	"id": 302,
+	"pergunta": "Se você programar a seguinte condição: 'SE o sensor de distância detectar um objeto a menos de 10 cm, ENTÃO...', qual seria a ação mais segura para o robô fazer a seguir?",
+	"alternativas": ["Acelerar os motores ao máximo", "Tocar uma música de festa", "Parar os motores ou virar para o lado", "Desligar as luzes"],
+	"correta": 2
+  },
+  {
+	"fase": 3,
+	"id": 303,
+	"pergunta": "O portão da fábrica está protegido por um código. Você vê um diagrama de blocos que indica uma sequência: 'SE (sensor de presença detecta alguém) E (horário é depois das 18h), ENTÃO (acionar alarme)'. Para entrar sem acionar o alarme, qual condição você precisa evitar?",
+	"alternativas": ["Ser detectado pelo sensor de presença", "Entrar antes das 18h", "Entrar depois das 18h", "Não ser detectado pelo sensor de presença"],
+	"correta": 3
+  },
+  {
+	"fase": 3,
+	"id": 304,
+	"pergunta": "Você decide usar um item que desativa o robô inimigo. Se o robô inimigo está programado para 'SE (detectar movimento), ENTÃO (atacar)', qual comando de programação você usaria para fazê-lo parar?",
+	"alternativas": ["Ligar motor", "Esperar 5 segundos", "Parar tudo", "Mover para frente"],
+	"correta": 2
+  },
+  {
+	"fase": 3,
+	"id": 305,
+	"pergunta": "Para confundir o robô inimigo, você precisa reprogramar seu sistema de visão. Se ele usa um sensor de cor, qual comando faria com que ele ignorasse a cor vermelha?",
+	"alternativas": ["SE (cor = azul), ENTÃO (mover)", "SE (cor = vermelho), ENTÃO (ignorar)", "SE (cor = verde), ENTÃO (parar)", "SE (cor = amarelo), ENTÃO (virar)"],
+	"correta": 1
+  },
+	{
+	"fase": 3,
+	"id": 306,
+	"pergunta": "Durante a batalha, o Boss lança um ataque que só pode ser evitado se o robô aliado se mover para a esquerda. Qual comando de programação faria o robô aliado desviar para a esquerda?",
+	"alternativas": ["Mover para frente", "Girar 90 graus à direita", "Girar 90 graus à esquerda", "Parar"],
+	"correta": 2
+  }
+]

@@ -1,0 +1,129 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://cdroneagro01"]
+
+[ext_resource type="Texture2D" uid="uid://drgn4pcu5x5hd" path="res://characters/drone_agro.png" id="1_drn"]
+
+[sub_resource type="AtlasTexture" id="At_DEATH_0"]
+atlas = ExtResource("1_drn")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="At_DEATH_1"]
+atlas = ExtResource("1_drn")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="At_DEATH_2"]
+atlas = ExtResource("1_drn")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="At_DEATH_3"]
+atlas = ExtResource("1_drn")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="At_DEATH_4"]
+atlas = ExtResource("1_drn")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="At_IDLE_0"]
+atlas = ExtResource("1_drn")
+region = Rect2(0, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="At_IDLE_1"]
+atlas = ExtResource("1_drn")
+region = Rect2(48, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="At_IDLE_2"]
+atlas = ExtResource("1_drn")
+region = Rect2(96, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="At_IDLE_3"]
+atlas = ExtResource("1_drn")
+region = Rect2(144, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="At_IDLE_4"]
+atlas = ExtResource("1_drn")
+region = Rect2(192, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="At_REPAIR_0"]
+atlas = ExtResource("1_drn")
+region = Rect2(0, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="At_REPAIR_1"]
+atlas = ExtResource("1_drn")
+region = Rect2(48, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="At_REPAIR_2"]
+atlas = ExtResource("1_drn")
+region = Rect2(96, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="At_REPAIR_3"]
+atlas = ExtResource("1_drn")
+region = Rect2(144, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="At_REPAIR_4"]
+atlas = ExtResource("1_drn")
+region = Rect2(192, 48, 48, 48)
+
+[sub_resource type="GDScript" id="GDScript_4ht1b"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("At_DEATH_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("At_DEATH_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("At_DEATH_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("At_DEATH_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("At_DEATH_4")
+}],
+"loop": 0,
+"name": &"DEATH",
+"speed": 6.667
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("At_IDLE_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("At_IDLE_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("At_IDLE_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("At_IDLE_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("At_IDLE_4")
+}],
+"loop": 1,
+"name": &"IDLE",
+"speed": 6.667
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("At_REPAIR_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("At_REPAIR_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("At_REPAIR_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("At_REPAIR_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("At_REPAIR_4")
+}],
+"loop": 1,
+"name": &"REPAIR",
+"speed": 6.667
+}]
+script = SubResource("GDScript_4ht1b")

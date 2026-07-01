@@ -46,7 +46,7 @@ const CINEMATIC_ZOOM_TARGET: float   = 1.04
 # Exemplos:
 #   const NEXT_SCENE_PATH := "res://MainMenu.tscn"
 #   const NEXT_SCENE_PATH := "res://Credits.tscn"
-const NEXT_SCENE_PATH: String = ""
+const NEXT_SCENE_PATH: String = "res://scenes/ui/Menu/MainMenu.tscn"
 
 
 # ---------- Referências de nó ----------

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cjun7gwjsk8th"
-path="res://.godot/imported/Cars3_v6.png-25fb40cbb9db87b3ad32bd634fbd46d6.ctex"
+path="res://.godot/imported/Cars3_v6.png-55d7fa6e7d957815767a362afbd1efb1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/tilesets/Cars3_v6.png"
-dest_files=["res://.godot/imported/Cars3_v6.png-25fb40cbb9db87b3ad32bd634fbd46d6.ctex"]
+source_file="res://scenes/ui/levels/tilesets/Cars3_v6.png"
+dest_files=["res://.godot/imported/Cars3_v6.png-55d7fa6e7d957815767a362afbd1efb1.ctex"]
 
 [params]
 

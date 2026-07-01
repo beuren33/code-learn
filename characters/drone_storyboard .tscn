@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bno8hm43hx7"]
+
+[ext_resource type="Script" uid="uid://cxc772s1l4jiw" path="res://characters/drone_storyboard.gd" id="1_drs"]
+[ext_resource type="SpriteFrames" uid="uid://cdroneagro01" path="res://characters/drone_agro.tres" id="2_drf"]
+[ext_resource type="Texture2D" uid="uid://b1vp4g5cx0rf5" path="res://characters/exclamacao.png" id="3_h61sx"]
+[ext_resource type="Script" uid="uid://bntr8cre3bexq" path="res://characters/exclamacao.gd" id="4_ypr04"]
+
+[node name="DroneStoryboard" type="AnimatedSprite2D" unique_id=101275342]
+texture_filter = 1
+position = Vector2(128, 172)
+sprite_frames = ExtResource("2_drf")
+animation = &"IDLE"
+script = ExtResource("1_drs")
+
+[node name="Exclamacao" type="Sprite2D" parent="." unique_id=1045990724]
+position = Vector2(0, -20)
+scale = Vector2(0.7, 0.659)
+texture = ExtResource("3_h61sx")
+script = ExtResource("4_ypr04")
