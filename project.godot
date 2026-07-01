@@ -12,7 +12,7 @@ config_version=5
 
 config/name="CodeLearn"
 run/main_scene="uid://e3fsionyxg22"
-config/features=PackedStringArray("4.6", "Mobile")
+config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
@@ -22,8 +22,10 @@ GameManager="uid://3wob2tu8qwge"
 
 [display]
 
-window/size/viewport_width=1080
-window/size/viewport_height=1920
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [editor_plugins]
 

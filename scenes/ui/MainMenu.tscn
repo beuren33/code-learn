@@ -81,14 +81,18 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 65.0
+offset_bottom = -1257.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_2ysvc")
 
 [node name="bg" type="TextureRect" parent="." unique_id=1158827224]
 layout_mode = 0
-offset_right = 1152.0
-offset_bottom = 648.0
+offset_left = 2.0
+offset_top = 92.5
+offset_right = 1929.0
+offset_bottom = 1160.5
 texture = ExtResource("2_2ysvc")
 expand_mode = 2
 
@@ -97,6 +101,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -66.0
+offset_bottom = 1083.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_top = 20
@@ -121,7 +127,7 @@ size_flags_vertical = 3
 theme_override_constants/separation = 28
 
 [node name="GAme_logo" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer" unique_id=1151177441]
-custom_minimum_size = Vector2(200, 200)
+custom_minimum_size = Vector2(500, 400)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
@@ -131,7 +137,7 @@ texture = ExtResource("3_iwbf0")
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 60
 text = "START"
 flat = true
 
@@ -142,7 +148,7 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_bhu4a")
 [node name="Creditos" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer" unique_id=2074421197]
 layout_mode = 2
 theme_override_constants/outline_size = 6
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 60
 theme_override_styles/normal = SubResource("StyleBoxFlat_2ysvc")
 text = "CREDITS"
 flat = true
@@ -154,7 +160,7 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_e2per")
 [node name="Quit" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer" unique_id=1483367707]
 layout_mode = 2
 theme_override_constants/outline_size = 6
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 60
 text = "QUIT GAME"
 flat = true
 
