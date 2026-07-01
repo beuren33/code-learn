@@ -1,23 +1,13 @@
 extends Control
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
 	pass
 
-
 func _on_startbtn_pressed() -> void:
-	get_tree().change_scene_to_file("res://Models3d/AssetsTabuleiro/Untitled.blend")
-
+	get_tree().change_scene_to_file("res://scenes/ui/levels/node_2d.tscn")
 
 func _on_quit_pressed() -> void:
-	get_tree().quit() # Replace with function body.
-
+	get_tree().quit()
 
 func _on_creditos_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/ui/Credits/Credits.tscn")

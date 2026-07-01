@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://c3jq5jas5r58i"]
+
+[ext_resource type="Texture2D" uid="uid://xmqnmbxjpjx8" path="res://Cópia de Cópia de Efeito de Brilho no Símbolo X.png" id="1_a2hai"]
+[ext_resource type="Script" uid="uid://bmn1sgmw1tvqx" path="res://minigames/drone/mini_drone.gd" id="1_u1dew"]
+[ext_resource type="Texture2D" uid="uid://bkpiw2d6tdos6" path="res://minigames/drone/Design sem nome (31).png" id="2_u1dew"]
+[ext_resource type="Texture2D" uid="uid://boifftjika3c2" path="res://minigames/drone/BotaoStart.png" id="3_3x8xp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3x8xp"]
+radius = 24.32521
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w0jne"]
+radius = 15.132746
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1imul"]
+radius = 15.132746
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r7ghn"]
+radius = 21.377558
+
+[node name="MiniDrone" type="Node2D" unique_id=478003018]
+script = ExtResource("1_u1dew")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1090226357]
+offset_right = 94.0
+offset_bottom = 74.0
+texture = ExtResource("1_a2hai")
+
+[node name="HeliceArrastavel1" type="Area2D" parent="." unique_id=2081203152]
+position = Vector2(195.00002, 251.00002)
+scale = Vector2(1.3, 1.3)
+
+[node name="Sprite2D" type="Sprite2D" parent="HeliceArrastavel1" unique_id=730850132]
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("2_u1dew")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HeliceArrastavel1" unique_id=1774739044]
+scale = Vector2(1.3, 1.3)
+shape = SubResource("CircleShape2D_3x8xp")
+
+[node name="AreaEncaixe1" type="Area2D" parent="." unique_id=1778459271]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaEncaixe1" unique_id=1291737773]
+position = Vector2(813, 251)
+shape = SubResource("CircleShape2D_w0jne")
+
+[node name="AreaEncaixe2" type="Area2D" parent="." unique_id=1695928304]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaEncaixe2" unique_id=1149098963]
+position = Vector2(812, 445)
+shape = SubResource("CircleShape2D_1imul")
+
+[node name="HeliceArrastavel2" type="Area2D" parent="." unique_id=515364655]
+position = Vector2(334, 294)
+scale = Vector2(1.3, 1.3)
+
+[node name="Sprite2D" type="Sprite2D" parent="HeliceArrastavel2" unique_id=349824099]
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("2_u1dew")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HeliceArrastavel2" unique_id=1148134785]
+position = Vector2(3.0769234, 3.0769234)
+scale = Vector2(1.3, 1.3)
+shape = SubResource("CircleShape2D_r7ghn")
+
+[node name="BotaoStart" type="TextureButton" parent="." unique_id=1960735123]
+offset_left = 182.0
+offset_top = 440.0
+offset_right = 282.0
+offset_bottom = 490.0
+scale = Vector2(2, 2)
+texture_normal = ExtResource("3_3x8xp")
+
+[node name="Label" type="Label" parent="BotaoStart" unique_id=50534865]
+layout_mode = 0
+offset_right = 102.0
+offset_bottom = 50.0

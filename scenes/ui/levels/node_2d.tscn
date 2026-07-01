@@ -1,0 +1,128 @@
+[gd_scene format=3 uid="uid://5b0168fst8xp"]
+
+[ext_resource type="PackedScene" uid="uid://ctsnaa3ofqcjc" path="res://scenes/ui/levels/projeto_tel1.ldtk" id="1_ldtk"]
+[ext_resource type="PackedScene" uid="uid://lcjb5pntrlrt" path="res://characters/personagem_storyboard.tscn" id="2_pers"]
+[ext_resource type="SpriteFrames" uid="uid://cdroneagro01" path="res://characters/drone_agro.tres" id="4_drone_sf"]
+[ext_resource type="Texture2D" uid="uid://b1vp4g5cx0rf5" path="res://characters/exclamacao.png" id="5_excl"]
+[ext_resource type="Script" uid="uid://cxc772s1l4jiw" path="res://characters/drone_storyboard.gd" id="6_drone_gd"]
+[ext_resource type="Script" uid="uid://hbhrrqshiol6" path="res://characters/storyboard_director.gd" id="7_3sajq"]
+[ext_resource type="Script" uid="uid://bntr8cre3bexq" path="res://characters/exclamacao.gd" id="7_excl_gd"]
+[ext_resource type="Script" uid="uid://soxovn75l2xy" path="res://characters/fundos_levels.gd" id="30_fundos"]
+[ext_resource type="Script" uid="uid://dldimnej45nop" path="res://characters/gerenciador_jogo.gd" id="31_ger"]
+[ext_resource type="SpriteFrames" path="res://characters/skins/robot_b.tres" id="40_robotb"]
+[ext_resource type="SpriteFrames" uid="uid://chettfj2epyu7" path="res://characters/skins/boss.tres" id="41_boss"]
+[ext_resource type="SpriteFrames" path="res://characters/skins/inimigos/robo_a.tres" id="42_roboa"]
+[ext_resource type="SpriteFrames" path="res://characters/skins/inimigos/robo_c.tres" id="43_roboc"]
+
+[node name="Node2D" type="Node2D" unique_id=306462379]
+script = ExtResource("30_fundos")
+
+[node name="projeto_tel1" parent="." unique_id=1498414431 instance=ExtResource("1_ldtk")]
+position = Vector2(6, 44)
+
+[node name="PersonagemStoryboard" parent="." unique_id=835910129 instance=ExtResource("2_pers")]
+position = Vector2(24, 140)
+animation = &"Interact_Side"
+frame_progress = 0.0
+distancia = 150.0
+repeticao = 2
+comecar_parado = true
+
+[node name="PersonagemTela4" parent="." unique_id=835910203 instance=ExtResource("2_pers")]
+position = Vector2(1379, 159)
+sprite_frames = ExtResource("40_robotb")
+animation = &"Punch_Side"
+frame_progress = 0.0
+distancia = 140.0
+repeticao = 2
+comecar_parado = true
+
+[node name="ExclamacaoNpc" type="Sprite2D" parent="PersonagemTela4" unique_id=835910301]
+texture_filter = 1
+position = Vector2(0, -24)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_excl")
+
+[node name="DroneStoryboard" type="AnimatedSprite2D" parent="." unique_id=366296119]
+texture_filter = 1
+position = Vector2(191, 142)
+scale = Vector2(0.875, 0.7916667)
+sprite_frames = ExtResource("4_drone_sf")
+animation = &"DEATH"
+frame = 4
+frame_progress = 1.0
+script = ExtResource("6_drone_gd")
+altura_subida = 38.0
+velocidade_subida = 45.0
+largura_patrulha = 150.0
+
+[node name="Exclamacao" type="Sprite2D" parent="DroneStoryboard" unique_id=858374280]
+texture_filter = 1
+position = Vector2(1.1428571, -21.47368)
+scale = Vector2(0.7, 0.659)
+texture = ExtResource("5_excl")
+script = ExtResource("7_excl_gd")
+
+[node name="ExclamacaoCarro" type="Sprite2D" parent="." unique_id=1816211167]
+texture_filter = 1
+position = Vector2(382.00003, 116)
+scale = Vector2(0.9749996, 0.9232502)
+texture = ExtResource("5_excl")
+
+[node name="StoryboardDirector" type="Node2D" parent="." unique_id=1144519546]
+script = ExtResource("7_3sajq")
+y_fazenda_drone = 140.0
+y_fazenda_carro = 160.0
+y_cidade = 160.0
+y_loja_fora = 175.0
+y_loja_dentro = 140.0
+y_fabrica_fora = 170.0
+y_fabrica_dentro = 155.0
+y_segundo_andar = 0.0
+y_producao = 180.0
+
+[node name="GerenciadorJogo" type="Node" parent="." unique_id=406247231]
+script = ExtResource("31_ger")
+caminho_diretor = NodePath("../StoryboardDirector")
+cena_quiz = "res://interface_quiz.tscn"
+mg_drone = "res://minigames/drone/mini_drone.tscn"
+mg_fios = "res://minigames/fios/minigame_fios.tscn"
+mg_led = "res://minigames/led/minigame_circuito.tscn"
+
+[node name="SuperBoss" type="AnimatedSprite2D" parent="." unique_id=2019444819]
+position = Vector2(4405, 152)
+sprite_frames = ExtResource("41_boss")
+animation = &"Walk"
+autoplay = "Walk"
+
+[node name="PortaLoja" type="Sprite2D" parent="." unique_id=267241860]
+modulate = Color(1, 0.2, 0.2, 1)
+position = Vector2(1955.0001, 71)
+scale = Vector2(1.03125, 1)
+texture = ExtResource("5_excl")
+
+[node name="ArmarioLoja" type="Sprite2D" parent="." unique_id=1913956983]
+modulate = Color(1, 0.2, 0.2, 1)
+position = Vector2(2806, 107)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_excl")
+
+[node name="PortaoFabrica" type="Sprite2D" parent="." unique_id=1732375975]
+modulate = Color(1, 0.2, 0.2, 1)
+position = Vector2(3334, 72)
+scale = Vector2(1.3125, 1.15625)
+texture = ExtResource("5_excl")
+
+[node name="RoboInimigoFora" type="AnimatedSprite2D" parent="." unique_id=771100201]
+position = Vector2(3333, 168)
+sprite_frames = ExtResource("42_roboa")
+animation = &"Idle"
+autoplay = "Idle"
+flip_h = true
+
+[node name="RoboInimigo" type="AnimatedSprite2D" parent="." unique_id=771100202]
+position = Vector2(3826, 156)
+sprite_frames = ExtResource("43_roboc")
+animation = &"Idle"
+autoplay = "Idle"
+flip_h = true

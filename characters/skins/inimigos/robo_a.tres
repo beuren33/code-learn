@@ -1,0 +1,45 @@
+[gd_resource type="SpriteFrames" load_steps=21 format=3]
+
+[ext_resource type="Texture2D" path="res://characters/skins/inimigos/robo_a/idle/RobotA-Idle_01.png" id="t1"]
+[ext_resource type="Texture2D" path="res://characters/skins/inimigos/robo_a/idle/RobotA-Idle_02.png" id="t2"]
+[ext_resource type="Texture2D" path="res://characters/skins/inimigos/robo_a/idle/RobotA-Idle_03.png" id="t3"]
+[ext_resource type="Texture2D" path="res://characters/skins/inimigos/robo_a/idle/RobotA-Idle_04.png" id="t4"]
+[ext_resource type="Texture2D" path="res://characters/skins/inimigos/robo_a/run/RobotA-Run_01.png" id="t5"]
+[ext_resource type="Texture2D" path="res://characters/skins/inimigos/robo_a/run/RobotA-Run_02.png" id="t6"]
+[ext_resource type="Texture2D" path="res://characters/skins/inimigos/robo_a/run/RobotA-Run_03.png" id="t7"]
+[ext_resource type="Texture2D" path="res://characters/skins/inimigos/robo_a/run/RobotA-Run_04.png" id="t8"]
+[ext_resource type="Texture2D" path="res://characters/skins/inimigos/robo_a/death/RobotA-Death_01.png" id="t9"]
+[ext_resource type="Texture2D" path="res://characters/skins/inimigos/robo_a/death/RobotA-Death_02.png" id="t10"]
+[ext_resource type="Texture2D" path="res://characters/skins/inimigos/robo_a/death/RobotA-Death_03.png" id="t11"]
+[ext_resource type="Texture2D" path="res://characters/skins/inimigos/robo_a/death/RobotA-Death_04.png" id="t12"]
+[ext_resource type="Texture2D" path="res://characters/skins/inimigos/robo_a/death/RobotA-Death_05.png" id="t13"]
+[ext_resource type="Texture2D" path="res://characters/skins/inimigos/robo_a/death/RobotA-Death_06.png" id="t14"]
+[ext_resource type="Texture2D" path="res://characters/skins/inimigos/robo_a/death/RobotA-Death_07.png" id="t15"]
+[ext_resource type="Texture2D" path="res://characters/skins/inimigos/robo_a/death/RobotA-Death_08.png" id="t16"]
+[ext_resource type="Texture2D" path="res://characters/skins/inimigos/robo_a/death/RobotA-Death_09.png" id="t17"]
+[ext_resource type="Texture2D" path="res://characters/skins/inimigos/robo_a/death/RobotA-Death_10.png" id="t18"]
+[ext_resource type="Texture2D" path="res://characters/skins/inimigos/robo_a/death/RobotA-Death_11.png" id="t19"]
+[ext_resource type="Texture2D" path="res://characters/skins/inimigos/robo_a/death/RobotA-Death_12.png" id="t20"]
+
+[resource]
+animations = [{
+"frames": [{"duration": 1.0, "texture": ExtResource("t1")}, {"duration": 1.0, "texture": ExtResource("t2")}, {"duration": 1.0, "texture": ExtResource("t3")}, {"duration": 1.0, "texture": ExtResource("t4")}],
+"loop": true,
+"name": &"Idle",
+"speed": 6.0
+}, {
+"frames": [{"duration": 1.0, "texture": ExtResource("t5")}, {"duration": 1.0, "texture": ExtResource("t6")}, {"duration": 1.0, "texture": ExtResource("t7")}, {"duration": 1.0, "texture": ExtResource("t8")}],
+"loop": true,
+"name": &"Walk",
+"speed": 10.0
+}, {
+"frames": [{"duration": 1.0, "texture": ExtResource("t5")}, {"duration": 1.0, "texture": ExtResource("t6")}, {"duration": 1.0, "texture": ExtResource("t7")}, {"duration": 1.0, "texture": ExtResource("t8")}],
+"loop": true,
+"name": &"Attack",
+"speed": 12.0
+}, {
+"frames": [{"duration": 1.0, "texture": ExtResource("t9")}, {"duration": 1.0, "texture": ExtResource("t10")}, {"duration": 1.0, "texture": ExtResource("t11")}, {"duration": 1.0, "texture": ExtResource("t12")}, {"duration": 1.0, "texture": ExtResource("t13")}, {"duration": 1.0, "texture": ExtResource("t14")}, {"duration": 1.0, "texture": ExtResource("t15")}, {"duration": 1.0, "texture": ExtResource("t16")}, {"duration": 1.0, "texture": ExtResource("t17")}, {"duration": 1.0, "texture": ExtResource("t18")}, {"duration": 1.0, "texture": ExtResource("t19")}, {"duration": 1.0, "texture": ExtResource("t20")}],
+"loop": false,
+"name": &"Death",
+"speed": 12.0
+}]

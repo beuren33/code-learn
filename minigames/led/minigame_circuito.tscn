@@ -1,0 +1,143 @@
+[gd_scene format=3 uid="uid://be37wep007j7b"]
+
+[ext_resource type="Script" uid="uid://debd205b0uui0" path="res://minigames/led/minigame_circuito.gd" id="1_fvw85"]
+[ext_resource type="Texture2D" uid="uid://cvbrmlrtt2b6y" path="res://minigames/led/fundo.png" id="2_fpcws"]
+[ext_resource type="Texture2D" uid="uid://d0bvibcdodsyy" path="res://minigames/led/fechar.png" id="3_m4ko3"]
+[ext_resource type="Texture2D" uid="uid://fqmatqyk5p51" path="res://minigames/led/start.png" id="4_lj4rq"]
+[ext_resource type="Texture2D" uid="uid://b4wom6ijx5evv" path="res://minigames/led/led.png" id="5_6jq8v"]
+[ext_resource type="Texture2D" uid="uid://blt2b0wi5dxdv" path="res://minigames/led/resistor.png" id="6_4l0ox"]
+[ext_resource type="Texture2D" uid="uid://08sm6jrpg0kp" path="res://minigames/led/brilho.png" id="7_2v080"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fvw85"]
+size = Vector2(45.75, 28)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fpcws"]
+radius = 18.0
+height = 66.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kcges"]
+radius = 21.0
+height = 78.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hq107"]
+size = Vector2(41, 20)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jb2ne"]
+radius = 21.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n0p3l"]
+radius = 21.023796
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bsghn"]
+radius = 20.396078
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qoeg5"]
+radius = 20.0
+
+[node name="MinigameCircuito" type="Node2D" unique_id=497938634]
+script = ExtResource("1_fvw85")
+
+[node name="FundoTerminal" type="TextureRect" parent="." unique_id=1678521421]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_fpcws")
+
+[node name="BotaoFechar" type="TextureButton" parent="." unique_id=178467773]
+offset_left = 862.0
+offset_top = 18.0
+offset_right = 912.0
+offset_bottom = 68.0
+scale = Vector2(2, 2)
+texture_normal = ExtResource("3_m4ko3")
+
+[node name="BotaoStart" type="TextureButton" parent="." unique_id=1838316435]
+offset_left = 161.0
+offset_top = 431.0
+offset_right = 261.0
+offset_bottom = 481.0
+scale = Vector2(2.4, 2.4)
+texture_normal = ExtResource("4_lj4rq")
+
+[node name="VagasEncaixe" type="Node2D" parent="." unique_id=177059836]
+
+[node name="Vaga_Resistor" type="Area2D" parent="VagasEncaixe" unique_id=480060695]
+position = Vector2(722, 299)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VagasEncaixe/Vaga_Resistor" unique_id=151859020]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_fvw85")
+
+[node name="Vaga_LED" type="Area2D" parent="VagasEncaixe" unique_id=1100132682]
+position = Vector2(680, 254)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VagasEncaixe/Vaga_LED" unique_id=1925356451]
+position = Vector2(2, 3)
+shape = SubResource("CapsuleShape2D_fpcws")
+
+[node name="PecasArrastaveis" type="Node2D" parent="." unique_id=1285403452]
+
+[node name="Item_LED" type="Area2D" parent="PecasArrastaveis" unique_id=934877858]
+position = Vector2(233, 281)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PecasArrastaveis/Item_LED" unique_id=715897747]
+position = Vector2(0, -9)
+shape = SubResource("CapsuleShape2D_kcges")
+
+[node name="Sprite2D" type="Sprite2D" parent="PecasArrastaveis/Item_LED" unique_id=675929661]
+position = Vector2(0, 8)
+scale = Vector2(2, 2)
+texture = ExtResource("5_6jq8v")
+
+[node name="Item_Resistor" type="Area2D" parent="PecasArrastaveis" unique_id=421423140]
+position = Vector2(338, 292)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PecasArrastaveis/Item_Resistor" unique_id=1087758595]
+position = Vector2(-3, 0)
+shape = SubResource("RectangleShape2D_hq107")
+
+[node name="Sprite2D" type="Sprite2D" parent="PecasArrastaveis/Item_Resistor" unique_id=866644375]
+position = Vector2(0, 4)
+texture = ExtResource("6_4l0ox")
+
+[node name="PinosBateria" type="Node2D" parent="." unique_id=737296250]
+
+[node name="PoloPositivo" type="Area2D" parent="PinosBateria" unique_id=613338458]
+position = Vector2(478, 374)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PinosBateria/PoloPositivo" unique_id=1519794600]
+position = Vector2(-1, 1)
+shape = SubResource("CircleShape2D_jb2ne")
+
+[node name="PoloNegativo" type="Area2D" parent="PinosBateria" unique_id=253315479]
+position = Vector2(521, 367)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PinosBateria/PoloNegativo" unique_id=97647506]
+position = Vector2(4, 7)
+shape = SubResource("CircleShape2D_n0p3l")
+
+[node name="EntradaPlacaPositivo" type="Area2D" parent="PinosBateria" unique_id=1520817025]
+position = Vector2(549, 280)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PinosBateria/EntradaPlacaPositivo" unique_id=2018040455]
+position = Vector2(5, -2)
+shape = SubResource("CircleShape2D_bsghn")
+
+[node name="EntradaPlacaNegativo" type="Area2D" parent="PinosBateria" unique_id=199960401]
+position = Vector2(551, 322)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PinosBateria/EntradaPlacaNegativo" unique_id=867573675]
+position = Vector2(9, 11)
+shape = SubResource("CircleShape2D_qoeg5")
+
+[node name="FioPositivo" type="Line2D" parent="." unique_id=1278622324]
+points = PackedVector2Array(479, 373)
+default_color = Color(1, 0, 0, 1)
+
+[node name="FioNegativo" type="Line2D" parent="." unique_id=1421157516]
+points = PackedVector2Array(527, 375)
+default_color = Color(0, 0, 0, 1)
+
+[node name="LedAcesoEfeito" type="Sprite2D" parent="." unique_id=1451336801]
+position = Vector2(680, 255)
+scale = Vector2(3, 3)
+texture = ExtResource("7_2v080")

@@ -2,15 +2,15 @@
 
 importer="ldtk.import"
 type="PackedScene"
-uid="uid://8pvlli8bfim2"
-path="res://.godot/imported/projeto_tel1.ldtk-d1e964051a5680ca3718cc87189561a4.scn"
+uid="uid://ctsnaa3ofqcjc"
+path="res://.godot/imported/projeto_tel1.ldtk-f64b34fdfa44f63232434551333570da.scn"
 
 [deps]
 
-files=["res://levels/tilesets/tileset_16px.res", "res://levels/tilesets/tileset_1px.res", "res://levels/levels/Level_0.scn", "res://levels/levels/Level_1.scn", "res://levels/levels/Level_2.scn", "res://levels/levels/Level_3.scn", "res://levels/levels/Level_4.scn", "res://levels/levels/Level_5.scn", "res://levels/levels/Level_6.scn", "res://.godot/imported/projeto_tel1.ldtk-d1e964051a5680ca3718cc87189561a4.scn"]
+files=["res://scenes/ui/levels/tilesets/tileset_16px.res", "res://scenes/ui/levels/tilesets/tileset_1px.res", "res://scenes/ui/levels/levels/Level_0.scn", "res://scenes/ui/levels/levels/Level_1.scn", "res://scenes/ui/levels/levels/Level_2.scn", "res://scenes/ui/levels/levels/Level_3.scn", "res://scenes/ui/levels/levels/Level_4.scn", "res://scenes/ui/levels/levels/Level_5.scn", "res://scenes/ui/levels/levels/Level_6.scn", "res://scenes/ui/levels/levels/Level_7.scn", "res://scenes/ui/levels/levels/Level_8.scn", "res://.godot/imported/projeto_tel1.ldtk-f64b34fdfa44f63232434551333570da.scn"]
 
-source_file="res://levels/projeto_tel1.ldtk"
-dest_files=["res://.godot/imported/projeto_tel1.ldtk-d1e964051a5680ca3718cc87189561a4.scn", "res://levels/tilesets/tileset_16px.res", "res://levels/tilesets/tileset_1px.res", "res://levels/levels/Level_0.scn", "res://levels/levels/Level_1.scn", "res://levels/levels/Level_2.scn", "res://levels/levels/Level_3.scn", "res://levels/levels/Level_4.scn", "res://levels/levels/Level_5.scn", "res://levels/levels/Level_6.scn", "res://.godot/imported/projeto_tel1.ldtk-d1e964051a5680ca3718cc87189561a4.scn"]
+source_file="res://scenes/ui/levels/projeto_tel1.ldtk"
+dest_files=["res://.godot/imported/projeto_tel1.ldtk-f64b34fdfa44f63232434551333570da.scn", "res://scenes/ui/levels/tilesets/tileset_16px.res", "res://scenes/ui/levels/tilesets/tileset_1px.res", "res://scenes/ui/levels/levels/Level_0.scn", "res://scenes/ui/levels/levels/Level_1.scn", "res://scenes/ui/levels/levels/Level_2.scn", "res://scenes/ui/levels/levels/Level_3.scn", "res://scenes/ui/levels/levels/Level_4.scn", "res://scenes/ui/levels/levels/Level_5.scn", "res://scenes/ui/levels/levels/Level_6.scn", "res://scenes/ui/levels/levels/Level_7.scn", "res://scenes/ui/levels/levels/Level_8.scn", "res://.godot/imported/projeto_tel1.ldtk-f64b34fdfa44f63232434551333570da.scn"]
 
 [params]
 

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://lcjb5pntrlrt"]
+
+[ext_resource type="SpriteFrames" uid="uid://dxfp3x18x1v1d" path="res://characters/personagem_completo.tres" id="1_hsh7q"]
+[ext_resource type="Script" uid="uid://48xx6f5icm0l" path="res://characters/personagem_storyboard.gd" id="1_pers"]
+
+[node name="PersonagemStoryboard" type="AnimatedSprite2D" unique_id=1401565146]
+texture_filter = 1
+position = Vector2(69, 35)
+sprite_frames = ExtResource("1_hsh7q")
+animation = &"Walk_Side"
+frame_progress = 0.2957372
+script = ExtResource("1_pers")
