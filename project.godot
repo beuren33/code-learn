@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="CodeLearn"
-run/main_scene="uid://5b0168fst8xp"
+run/main_scene="uid://e3fsionyxg22"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 
@@ -19,6 +19,11 @@ config/icon="res://icon.svg"
 
 SaveManager="uid://bmsjrwj4ovanc"
 GameManager="uid://3wob2tu8qwge"
+
+[display]
+
+window/size/viewport_width=1080
+window/size/viewport_height=1920
 
 [editor_plugins]
 
@@ -37,3 +42,4 @@ import/blender/enabled=false
 textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true

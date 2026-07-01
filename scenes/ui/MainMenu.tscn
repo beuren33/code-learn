@@ -1,9 +1,8 @@
 [gd_scene format=3 uid="uid://e3fsionyxg22"]
 
 [ext_resource type="Script" uid="uid://cdp6xuh8wtju1" path="res://scripts/main_menu.gd" id="1_2ysvc"]
-[ext_resource type="Texture2D" uid="uid://bqraqpmwl4yua" path="res://scenes/ui/Menu/Back_cities.png" id="2_2ysvc"]
-[ext_resource type="Theme" path="res://scenes/ui/default_btn.tres" id="2_iwbf0"]
-[ext_resource type="Texture2D" path="res://scenes/ui/CODE_LEARN__3_-removebg-preview.png" id="3_iwbf0"]
+[ext_resource type="Texture2D" uid="uid://d1kom50gbu4v6" path="res://scenes/ui/Menu/Back_cities.png" id="2_2ysvc"]
+[ext_resource type="Texture2D" uid="uid://bi3yqcdj2ukrl" path="res://scenes/ui/Menu/CODE_LEARN__3_-removebg-preview.png" id="3_iwbf0"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xpiny"]
 
@@ -114,21 +113,22 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_xpiny")
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1365986048]
 layout_mode = 2
 size_flags_horizontal = 2
-theme = ExtResource("2_iwbf0")
 theme_override_constants/separation = 21
-
-[node name="GAme_logo" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1151177441]
-layout_mode = 2
-texture = ExtResource("3_iwbf0")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1848490237]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 28
 
+[node name="GAme_logo" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer" unique_id=1151177441]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+texture = ExtResource("3_iwbf0")
+
 [node name="Startbtn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer" unique_id=2143113988]
 layout_mode = 2
-theme = ExtResource("2_iwbf0")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
 theme_override_font_sizes/font_size = 30
@@ -141,7 +141,6 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_bhu4a")
 
 [node name="Creditos" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer" unique_id=2074421197]
 layout_mode = 2
-theme = ExtResource("2_iwbf0")
 theme_override_constants/outline_size = 6
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_2ysvc")
@@ -154,7 +153,6 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_e2per")
 
 [node name="Quit" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer" unique_id=1483367707]
 layout_mode = 2
-theme = ExtResource("2_iwbf0")
 theme_override_constants/outline_size = 6
 theme_override_font_sizes/font_size = 30
 text = "QUIT GAME"
@@ -170,5 +168,5 @@ libraries/ = SubResource("AnimationLibrary_bhu4a")
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/Startbtn" to="." method="_on_startbtn_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/Creditos" to="." method="_on_startbtn_2_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/Quit" to="." method="_on_startbtn_3_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/Quit" to="." method="_on_startbtn_3_pressed"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3ahj3v25y4nf"
-path="res://.godot/imported/character_thumbs_up.png-582f3ed81acef289c96565091d453bba.ctex"
+uid="uid://cj50o2sbcey6j"
+path="res://.godot/imported/Code Learn (4).png-d2778276ad13984de0353699ecf59adc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tela-final/assets/character_thumbs_up.png"
-dest_files=["res://.godot/imported/character_thumbs_up.png-582f3ed81acef289c96565091d453bba.ctex"]
+source_file="res://scenes/Code Learn (4).png"
+dest_files=["res://.godot/imported/Code Learn (4).png-d2778276ad13984de0353699ecf59adc.ctex"]
 
 [params]
 
