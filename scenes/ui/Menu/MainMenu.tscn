@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://bn8ckc5thujbo"]
 
 [ext_resource type="Script" uid="uid://cdp6xuh8wtju1" path="res://scripts/main_menu.gd" id="1_2ysvc"]
-[ext_resource type="Texture2D" uid="uid://bqraqpmwl4yua" path="res://scenes/ui/Menu/Back_cities.png" id="1_iwbf0"]
+[ext_resource type="Texture2D" uid="uid://d1kom50gbu4v6" path="res://scenes/ui/Menu/Back_cities.png" id="1_iwbf0"]
 [ext_resource type="Theme" uid="uid://clm8lyxdqmaog" path="res://scenes/ui/Menu/default_btn.tres" id="2_iwbf0"]
-[ext_resource type="Texture2D" uid="uid://dr2g4rkqhg0hc" path="res://scenes/ui/Menu/CODE_LEARN__3_-removebg-preview.png" id="3_iwbf0"]
+[ext_resource type="Texture2D" uid="uid://bi3yqcdj2ukrl" path="res://scenes/ui/Menu/CODE_LEARN__3_-removebg-preview.png" id="3_iwbf0"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xpiny"]
 
@@ -79,9 +79,10 @@ _data = {
 
 [node name="main" type="Control" unique_id=927853596]
 layout_mode = 3
-anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -770.0
+offset_bottom = -428.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_2ysvc")
@@ -98,6 +99,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -682.0
+offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_top = 20
@@ -131,7 +134,7 @@ layout_mode = 2
 theme = ExtResource("2_iwbf0")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 50
 text = "START"
 flat = true
 
@@ -143,7 +146,7 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_bhu4a")
 layout_mode = 2
 theme = ExtResource("2_iwbf0")
 theme_override_constants/outline_size = 6
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_2ysvc")
 text = "CREDITS"
 flat = true
@@ -156,7 +159,7 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_e2per")
 layout_mode = 2
 theme = ExtResource("2_iwbf0")
 theme_override_constants/outline_size = 6
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 50
 text = "QUIT GAME"
 flat = true
 

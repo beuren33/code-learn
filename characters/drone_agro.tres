@@ -82,7 +82,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("At_DEATH_4")
 }],
-"loop": false,
+"loop": 0,
 "name": &"DEATH",
 "speed": 6.667
 }, {
@@ -102,7 +102,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("At_IDLE_4")
 }],
-"loop": true,
+"loop": 1,
 "name": &"IDLE",
 "speed": 6.667
 }, {
@@ -122,7 +122,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("At_REPAIR_4")
 }],
-"loop": true,
+"loop": 1,
 "name": &"REPAIR",
 "speed": 6.667
 }]

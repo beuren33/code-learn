@@ -655,7 +655,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("At_Idle_Down_3")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Idle_Down",
 "speed": 10.0
 }, {
@@ -672,7 +672,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("At_Idle_Down_Side_7")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Idle_Down_Side",
 "speed": 10.0
 }, {
@@ -689,7 +689,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("At_Idle_Side_11")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Idle_Side",
 "speed": 10.0
 }, {
@@ -706,7 +706,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("At_Idle_Up_19")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Idle_Up",
 "speed": 10.0
 }, {
@@ -723,7 +723,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("At_Idle_Up_Side_15")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Idle_Up_Side",
 "speed": 10.0
 }, {
@@ -740,7 +740,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("At_Interact_Down_3")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Interact_Down",
 "speed": 10.0
 }, {
@@ -757,7 +757,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("At_Interact_Down_Side_7")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Interact_Down_Side",
 "speed": 10.0
 }, {
@@ -774,7 +774,7 @@ animations = [{
 "duration": 0.5,
 "texture": SubResource("At_Interact_Side_11")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Interact_Side",
 "speed": 10.0
 }, {
@@ -791,7 +791,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("At_Interact_Up_19")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Interact_Up",
 "speed": 10.0
 }, {
@@ -808,7 +808,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("At_Interact_Up_Side_15")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Interact_Up_Side",
 "speed": 10.0
 }, {
@@ -828,7 +828,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("At_Jump_Down_4")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Jump_Down",
 "speed": 10.0
 }, {
@@ -848,7 +848,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("At_Jump_Down_Side_9")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Jump_Down_Side",
 "speed": 10.0
 }, {
@@ -868,7 +868,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("At_Jump_Side_14")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Jump_Side",
 "speed": 10.0
 }, {
@@ -888,7 +888,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("At_Jump_Up_24")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Jump_Up",
 "speed": 10.0
 }, {
@@ -908,7 +908,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("At_Jump_Up_Side_19")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Jump_Up_Side",
 "speed": 10.0
 }, {
@@ -934,7 +934,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("At_Punch_Down_6")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Punch_Down",
 "speed": 10.0
 }, {
@@ -960,7 +960,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("At_Punch_Down_Side_13")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Punch_Down_Side",
 "speed": 10.0
 }, {
@@ -986,7 +986,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("At_Punch_Side_20")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Punch_Side",
 "speed": 10.0
 }, {
@@ -1012,7 +1012,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("At_Punch_Up_34")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Punch_Up",
 "speed": 10.0
 }, {
@@ -1038,7 +1038,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("At_Punch_Up_Side_27")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Punch_Up_Side",
 "speed": 10.0
 }, {
@@ -1067,7 +1067,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("At_Rotate_7")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Rotate",
 "speed": 10.0
 }, {
@@ -1090,7 +1090,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("At_Run_Down_5")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Run_Down",
 "speed": 10.0
 }, {
@@ -1113,7 +1113,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("At_Run_Down_Side_11")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Run_Down_Side",
 "speed": 10.0
 }, {
@@ -1136,7 +1136,7 @@ animations = [{
 "duration": 1.1,
 "texture": SubResource("At_Run_Side_13")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Run_Side",
 "speed": 10.0
 }, {
@@ -1159,7 +1159,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("At_Run_Up_29")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Run_Up",
 "speed": 10.0
 }, {
@@ -1182,7 +1182,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("At_Run_Up_Side_23")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Run_Up_Side",
 "speed": 10.0
 }, {
@@ -1199,7 +1199,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("At_Walk_Down_3")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Walk_Down",
 "speed": 10.0
 }, {
@@ -1216,7 +1216,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("At_Walk_Down_Side_7")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Walk_Down_Side",
 "speed": 10.0
 }, {
@@ -1233,7 +1233,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("At_Walk_Side_11")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Walk_Side",
 "speed": 10.0
 }, {
@@ -1250,7 +1250,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("At_Walk_Side_Up_15")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Walk_Side_Up",
 "speed": 10.0
 }, {
@@ -1267,7 +1267,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("At_Walk_Up_19")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Walk_Up",
 "speed": 10.0
 }]
