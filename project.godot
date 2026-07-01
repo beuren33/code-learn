@@ -22,8 +22,9 @@ GameManager="uid://3wob2tu8qwge"
 
 [display]
 
-window/size/viewport_width=1080
-window/size/viewport_height=1920
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=3
 
 [editor_plugins]
 

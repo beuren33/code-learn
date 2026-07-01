@@ -168,5 +168,5 @@ libraries/ = SubResource("AnimationLibrary_bhu4a")
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/Startbtn" to="." method="_on_startbtn_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/Creditos" to="." method="_on_startbtn_2_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/Quit" to="." method="_on_startbtn_3_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
