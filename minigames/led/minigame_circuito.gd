@@ -91,32 +91,25 @@ func verificar_encaixe_peca(peca: Area2D):
 # --- SISTEMA DOS DOIS FIOS ---
 
 func verificar_conexao_fio():
-	var parametros_colisao = PhysicsPointQueryParameters2D.new()
-	parametros_colisao.position = get_global_mouse_position()
-	parametros_colisao.collide_with_areas = true
-	
-	var espaco_fisico = get_world_2d().direct_space_state
-	var resultados = espaco_fisico.intersect_point(parametros_colisao)
-	
+	var mouse_pos = get_global_mouse_position()
 	var conectou_certo = false
-	for resultado in resultados:
-		# Se soltou o mouse exatamente em cima do pino alvo correto daquele fio
-		if resultado.collider == pino_alvo_atual:
-			fio_atual.set_point_position(1, fio_atual.to_local(pino_alvo_atual.global_position))
-			conectou_certo = true
-			
-			if fio_atual == $FioPositivo: fio_positivo_ok = true
-			else: fio_negativo_ok = true
-			
-			print("Fio ", fio_atual.name, " conectado com sucesso!")
-			break
-			
+	
+	var distancia = mouse_pos.distance_to(pino_alvo_atual.global_position)
+	if distancia < 40.0:
+		fio_atual.set_point_position(1, fio_atual.to_local(pino_alvo_atual.global_position))
+		conectou_certo = true
+		
+		if fio_atual == $FioPositivo: fio_positivo_ok = true
+		else: fio_negativo_ok = true
+		
+		print("Fio ", fio_atual.name, " conectado com sucesso!")
+	
 	if not conectou_certo:
 		fio_atual.clear_points()
 		if fio_atual == $FioPositivo: fio_positivo_ok = false
 		else: fio_negativo_ok = false
 		print("Fio solto fora do lugar.")
-		
+	
 	fio_atual = null
 	pino_origem_atual = null
 	pino_alvo_atual = null

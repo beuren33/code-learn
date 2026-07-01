@@ -17,6 +17,7 @@ var conexoes_feitas = {
 }
 
 func _ready():
+	_ajustar_escala()
 	botao_start.pressed.connect(_on_botao_start_pressed)
 	botao_fechar.pressed.connect(_on_botao_fechar_pressed) # Conecta o botão X
 	
@@ -24,9 +25,20 @@ func _ready():
 	for pino in $TerminaisOrigem.get_children():
 		pino.input_event.connect(_on_pino_input_event.bind(pino))
 
+func _ajustar_escala() -> void:
+	await get_tree().process_frame
+	var vp = get_viewport().get_visible_rect().size
+	# pega o tamanho original da cena (ajusta esses valores para cada minigame)
+	var design = Vector2(1920.0, 1080.0)
+	var s = minf(vp.x / design.x, vp.y / design.y)
+	scale = Vector2(s, s)
+	# centraliza
+	position = (vp - design * s) / 2.0
+
 func _process(_delta):
 	if arrastando and fio_atual:
 		# Corrigido: Converte a posição do mouse para o espaço local da linha
+		var mouse_pos = get_viewport().get_canvas_transform().affine_inverse() * get_viewport().get_mouse_position()
 		fio_atual.set_point_position(1, fio_atual.to_local(get_global_mouse_position()))
 
 func _on_pino_input_event(_viewport, event, _shape_idx, pino_clicado):
@@ -52,36 +64,26 @@ func _input(event):
 func verificar_conexao_destino():
 	var acertou_pino = false
 	var nome_cor_origem = pino_selecionado.name.split("_")[1]
+	var mouse_pos = get_global_mouse_position()
 	
-	# Criamos um ponto virtual onde o mouse está soltando o fio
-	var parametros_colisao = PhysicsPointQueryParameters2D.new()
-	parametros_colisao.position = get_global_mouse_position()
-	parametros_colisao.collide_with_areas = true
-	
-	var espaco_fisico = get_world_2d().direct_space_state
-	var resultados = espaco_fisico.intersect_point(parametros_colisao)
-	
-	# Descobre se o mouse foi solto em cima de algum pino de destino
-	for resultado in resultados:
-		var objeto_atingido = resultado.collider
-		if objeto_atingido.get_parent().name == "TerminaisDestino":
-			var nome_cor_destino = objeto_atingido.name.split("_")[1]
-			
+	for pino_destino in $TerminaisDestino.get_children():
+		var distancia = mouse_pos.distance_to(pino_destino.global_position)
+		if distancia < 40.0:
+			var nome_cor_destino = pino_destino.name.split("_")[1]
 			if nome_cor_origem == nome_cor_destino:
-				fio_atual.set_point_position(1, fio_atual.to_local(objeto_atingido.global_position))
+				fio_atual.set_point_position(1, fio_atual.to_local(pino_destino.global_position))
 				conexoes_feitas[pino_selecionado.name] = true
 				acertou_pino = true
 				print("Fio ", nome_cor_origem, " conectado corretamente!")
 				break
-				
+	
 	if not acertou_pino:
 		fio_atual.clear_points()
 		conexoes_feitas[pino_selecionado.name] = false
 		print("Conexão inválida! O fio desconectou.")
-		
+	
 	pino_selecionado = null
 	fio_atual = null
-
 # VALIDAÇÃO DO BOTÃO START
 func _on_botao_start_pressed():
 	if completado:

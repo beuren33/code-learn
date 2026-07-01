@@ -51,7 +51,7 @@
   {
 	"fase": 2,
 	"id": 203,
-	"pergunta": "A porta da loja está trancada por um sistema eletrônico. Você percebe que um LED está apagado. Qual é a função principal de um LED em um circuito eletrônico?",
+	"pergunta": "Qual é a função principal de um LED em um circuito eletrônico?",
 	"alternativas": ["Gerar calor", "Amplificar o som", "Armazenar energia", "Emitir luz"],
 	"correta": 3
   },
@@ -65,14 +65,14 @@
   {
 	"fase": 2,
 	"id": 205,
-	"pergunta": "O braço robótico não está respondendo. Você percebe que um fio está solto no circuito que alimenta o motor. Qual é a função de um fio em um circuito eletrônico?",
+	"pergunta": "Qual é a função de um fio em um circuito eletrônico?",
 	"alternativas": ["Armazenar energia", "Controlar a velocidade do motor", "Conduzir a corrente elétrica", "Emitir luz"],
 	"correta": 2
   },
   {
 	"fase": 2,
 	"id": 206,
-	"pergunta": "O Boss está carregando um ataque de energia. Você percebe que ele usa um LED muito brilhante para indicar isso. Qual componente eletrônico pode ser usado para diminuir a intensidade da luz de um LED e, talvez, desativar o ataque?",
+	"pergunta": "Você percebe que o Boss usa um LED muito brilhante para indicar o ataque. Qual componente eletrônico pode ser usado para diminuir a intensidade da luz de um LED e, talvez, desativar o ataque?",
 	"alternativas": ["Um buzzer", "Um resistor", "Um motor DC", "Um sensor de toque"],
 	"correta": 1
   },
@@ -100,7 +100,7 @@
   {
 	"fase": 3,
 	"id": 303,
-	"pergunta": "O portão da fábrica está protegido por um código. Você vê um diagrama de blocos que indica uma sequência: 'SE (sensor de presença detecta alguém) E (horário é depois das 18h), ENTÃO (acionar alarme)'. Para entrar sem acionar o alarme, qual condição você precisa evitar?",
+	"pergunta": "Você vê um diagrama de blocos que indica uma sequência: 'SE (sensor de presença detecta alguém) E (horário é depois das 18h), ENTÃO (acionar alarme)'. Para entrar sem acionar o alarme, qual condição você precisa evitar?",
 	"alternativas": ["Ser detectado pelo sensor de presença", "Entrar antes das 18h", "Entrar depois das 18h", "Não ser detectado pelo sensor de presença"],
 	"correta": 3
   },

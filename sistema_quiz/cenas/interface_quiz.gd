@@ -26,7 +26,7 @@ var modo_combate: bool = false       # painel menor + fundo transparente (deixa 
 
 # O quiz foi desenhado numa tela grande (~1920x1080). Isto encaixa o painel no
 # tamanho real da tela, então a pergunta nunca fica gigante nem estourada.
-const DESIGN := Vector2(1920.0, 1080.0)
+const DESIGN := Vector2(1080.0, 1920.0)
 
 func _ready():
 	botoes_alternativas = grid_opcoes.get_children()
@@ -48,7 +48,7 @@ func _ajustar_escala() -> void:
 		var fe := $fundoEscuro
 		if fe is ColorRect:
 			fe.color.a = 0.2
-		painel.position.y -= vp.y * 0.12   # sobe o painel pra liberar a luta embaixo
+		painel.position.y -= vp.y * 0.12
 	_anim_entrada(painel, s)
 
 
