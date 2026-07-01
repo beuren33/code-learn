@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d3ahj3v25y4nf"
-path="res://.godot/imported/character_thumbs_up.png-0da999dbfde8820caa6d8bfa852824c1.ctex"
+path="res://.godot/imported/character_thumbs_up.png-582f3ed81acef289c96565091d453bba.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://tela-final/assets/character_thumbs_up.png"
-dest_files=["res://.godot/imported/character_thumbs_up.png-0da999dbfde8820caa6d8bfa852824c1.ctex"]
+dest_files=["res://.godot/imported/character_thumbs_up.png-582f3ed81acef289c96565091d453bba.ctex"]
 
 [params]
 

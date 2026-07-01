@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bx1q212u1eruj"
-path="res://.godot/imported/drone -1.png.png-b45d4da26545e1f9865216b019cad1cb.ctex"
+path="res://.godot/imported/drone -1.png.png-a8dbff3c934165ab24df53b8a6481f52.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/tilesets/drone -1.png.png"
-dest_files=["res://.godot/imported/drone -1.png.png-b45d4da26545e1f9865216b019cad1cb.ctex"]
+source_file="res://scenes/ui/levels/tilesets/drone -1.png.png"
+dest_files=["res://.godot/imported/drone -1.png.png-a8dbff3c934165ab24df53b8a6481f52.ctex"]
 
 [params]
 

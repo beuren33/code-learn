@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0x308by33jg7"
-path="res://.godot/imported/cidade_Centr.png-f3d1ef091cd5a973d67ef13dc490194d.ctex"
+uid="uid://c7pg2wrds2jjo"
+path="res://.godot/imported/robo_forge_start_screen.png-f36d08100db288660b955aa8df124a49.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/ui/levels/tilesets_cidade/cidade_Centr.png"
-dest_files=["res://.godot/imported/cidade_Centr.png-f3d1ef091cd5a973d67ef13dc490194d.ctex"]
+source_file="res://scenes/ui/Menu/robo_forge_start_screen.png"
+dest_files=["res://.godot/imported/robo_forge_start_screen.png-f36d08100db288660b955aa8df124a49.ctex"]
 
 [params]
 

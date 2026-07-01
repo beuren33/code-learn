@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bjeygkwgxtjel"
-path="res://.godot/imported/cidade_casas_up49.png-c032e31e286b6256da476007a4c7ef52.ctex"
+path="res://.godot/imported/cidade_casas_up49.png-3907e528c65c5ebace5dd5ba0571b317.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/tilesets_cidade/cidade_casas_up49.png"
-dest_files=["res://.godot/imported/cidade_casas_up49.png-c032e31e286b6256da476007a4c7ef52.ctex"]
+source_file="res://scenes/ui/levels/tilesets_cidade/cidade_casas_up49.png"
+dest_files=["res://.godot/imported/cidade_casas_up49.png-3907e528c65c5ebace5dd5ba0571b317.ctex"]
 
 [params]
 

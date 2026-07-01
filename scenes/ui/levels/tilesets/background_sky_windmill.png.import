@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dsxguh0prju30"
-path="res://.godot/imported/background_sky_windmill.png-efd626d07f467f33ec5215249e21302a.ctex"
+path="res://.godot/imported/background_sky_windmill.png-9b4230c71f150e7de1cabba878e8b75f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/tilesets/background_sky_windmill.png"
-dest_files=["res://.godot/imported/background_sky_windmill.png-efd626d07f467f33ec5215249e21302a.ctex"]
+source_file="res://scenes/ui/levels/tilesets/background_sky_windmill.png"
+dest_files=["res://.godot/imported/background_sky_windmill.png-9b4230c71f150e7de1cabba878e8b75f.ctex"]
 
 [params]
 

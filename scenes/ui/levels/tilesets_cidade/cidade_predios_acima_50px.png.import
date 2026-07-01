@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cnfmr3oogeaiq"
-path="res://.godot/imported/cidade_predios_acima_50px.png-969090db10c0621036dd9f90cd358085.ctex"
+path="res://.godot/imported/cidade_predios_acima_50px.png-7fdf513744211575d00c2540b00be852.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/tilesets_cidade/cidade_predios_acima_50px.png"
-dest_files=["res://.godot/imported/cidade_predios_acima_50px.png-969090db10c0621036dd9f90cd358085.ctex"]
+source_file="res://scenes/ui/levels/tilesets_cidade/cidade_predios_acima_50px.png"
+dest_files=["res://.godot/imported/cidade_predios_acima_50px.png-7fdf513744211575d00c2540b00be852.ctex"]
 
 [params]
 

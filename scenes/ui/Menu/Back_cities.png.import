@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0x308by33jg7"
-path="res://.godot/imported/cidade_Centr.png-f3d1ef091cd5a973d67ef13dc490194d.ctex"
+uid="uid://d1kom50gbu4v6"
+path="res://.godot/imported/Back_cities.png-2faae4cc5c34129015c50ec5b30e5cae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/ui/levels/tilesets_cidade/cidade_Centr.png"
-dest_files=["res://.godot/imported/cidade_Centr.png-f3d1ef091cd5a973d67ef13dc490194d.ctex"]
+source_file="res://scenes/ui/Menu/Back_cities.png"
+dest_files=["res://.godot/imported/Back_cities.png-2faae4cc5c34129015c50ec5b30e5cae.ctex"]
 
 [params]
 

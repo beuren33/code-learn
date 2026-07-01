@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ierbcfihlnun"
-path="res://.godot/imported/highway.png-8730772efe8a44f3b9fd348cd9098943.ctex"
+path="res://.godot/imported/highway.png-f6087e0c810b4b4e53b8b4a383fbc737.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/tilesets/highway.png"
-dest_files=["res://.godot/imported/highway.png-8730772efe8a44f3b9fd348cd9098943.ctex"]
+source_file="res://scenes/ui/levels/tilesets/highway.png"
+dest_files=["res://.godot/imported/highway.png-f6087e0c810b4b4e53b8b4a383fbc737.ctex"]
 
 [params]
 
