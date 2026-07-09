@@ -1,0 +1,96 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/options_menu.gd" id="1_opts"]
+[ext_resource type="Theme" uid="uid://clm8lyxdqmaog" path="res://scenes/ui/Menu/default_btn.tres" id="2_opts"]
+
+[node name="OptionsMenu" type="Control" unique_id=3001]
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_opts")
+script = ExtResource("1_opts")
+
+[node name="Fundo" type="ColorRect" parent="." unique_id=3002]
+layout_mode = 1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.08, 0.08, 0.1, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=3003]
+layout_mode = 1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 120
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 120
+theme_override_constants/margin_bottom = 80
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=3004]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="Titulo" type="Label" parent="MarginContainer/VBoxContainer" unique_id=3005]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "OPÇÕES"
+
+[node name="LinhaMusica" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=3006]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="LabelMusica" type="Label" parent="MarginContainer/VBoxContainer/LinhaMusica" unique_id=3007]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Música"
+custom_minimum_size = Vector2(220, 0)
+
+[node name="SliderMusica" type="HSlider" parent="MarginContainer/VBoxContainer/LinhaMusica" unique_id=3008]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.01
+value = 0.8
+
+[node name="MudoMusica" type="CheckButton" parent="MarginContainer/VBoxContainer/LinhaMusica" unique_id=3009]
+layout_mode = 2
+text = "Mudo"
+
+[node name="LinhaSfx" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=3010]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="LabelSfx" type="Label" parent="MarginContainer/VBoxContainer/LinhaSfx" unique_id=3011]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Efeitos"
+custom_minimum_size = Vector2(220, 0)
+
+[node name="SliderSfx" type="HSlider" parent="MarginContainer/VBoxContainer/LinhaSfx" unique_id=3012]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="MudoSfx" type="CheckButton" parent="MarginContainer/VBoxContainer/LinhaSfx" unique_id=3013]
+layout_mode = 2
+text = "Mudo"
+
+[node name="Voltar" type="Button" parent="MarginContainer/VBoxContainer" unique_id=3014]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "VOLTAR"
+
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/LinhaMusica/SliderMusica" to="." method="_on_slider_musica_value_changed"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/LinhaMusica/MudoMusica" to="." method="_on_mudo_musica_toggled"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/LinhaSfx/SliderSfx" to="." method="_on_slider_sfx_value_changed"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/LinhaSfx/MudoSfx" to="." method="_on_mudo_sfx_toggled"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Voltar" to="." method="_on_voltar_pressed"]

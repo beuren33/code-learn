@@ -12,13 +12,13 @@ config_version=5
 
 config/name="CodeLearn"
 run/main_scene="uid://e3fsionyxg22"
-config/features=PackedStringArray("4.7", "Mobile")
+config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
 
-SaveManager="uid://bmsjrwj4ovanc"
-GameManager="uid://3wob2tu8qwge"
+AudioManager="*uid://c3hnupvn34j82"
+MenuFade="*res://scripts/MenuFade.gd"
 
 [display]
 
@@ -29,7 +29,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg", "res://addons/godot-sqlite/plugin.cfg", "res://addons/ldtk-importer/plugin.cfg")
+enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg", "res://addons/ldtk-importer/plugin.cfg")
 
 [filesystem]
 

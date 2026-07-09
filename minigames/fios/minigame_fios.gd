@@ -1,5 +1,7 @@
 extends Node2D
 
+signal concluido(sucesso: bool)
+
 @onready var botao_start = $BotaoStart
 @onready var botao_fechar = $BotaoFechar  # Referência ao botão X
 
@@ -107,6 +109,7 @@ func _on_botao_start_pressed():
 func _on_botao_fechar_pressed():
 	print("Minigame fechado pelo jogador.")
 	self.visible = false # Esconde a tela do minigame imediatamente
+	concluido.emit(false)
 
 func resetar_todos_os_fios():
 	for fio in $FiosDesenho.get_children():
@@ -117,3 +120,4 @@ func resetar_todos_os_fios():
 func _passar_de_fase():
 	await get_tree().create_timer(1.5).timeout
 	self.visible = false
+	concluido.emit(true)

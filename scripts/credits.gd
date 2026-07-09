@@ -30,4 +30,4 @@ func _ready() -> void:
 	tween.finished.connect(_acabou)
 
 func _acabou() -> void:
-	get_tree().change_scene_to_file("res://scenes/ui/Menu/MainMenu.tscn")
+	MenuFade.trocar_cena("res://scenes/ui/Menu/MainMenu.tscn")

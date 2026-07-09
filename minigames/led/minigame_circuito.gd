@@ -1,5 +1,7 @@
 extends Node2D
 
+signal concluido(sucesso: bool)
+
 @onready var botao_start = $BotaoStart
 @onready var botao_fechar = $BotaoFechar
 @onready var led_aceso = $LedAcesoEfeito
@@ -143,7 +145,9 @@ func resetar_tudo():
 
 func _on_botao_fechar_pressed():
 	self.visible = false
+	concluido.emit(false)
 
 func _passar_de_fase():
 	await get_tree().create_timer(2.0).timeout
 	self.visible = false
+	concluido.emit(true)

@@ -5,28 +5,23 @@ extends Node
 const SAVE_PATH = "user://audio_config.cfg"
 
 const MUSIC = {
-	"home":      "res://audio/music/music_home.ogg",
-	"tabuleiro": "res://audio/music/music_tabuleiro.ogg",
-	"bioma1":    "res://audio/music/music_bioma1.ogg",
-	"bioma2":    "res://audio/music/music_bioma2.ogg",
-	"bioma3":    "res://audio/music/music_bioma3.ogg",
-	"bioma4":    "res://audio/music/music_bioma4.ogg",
-	"boss":      "res://audio/music/music_boss.ogg",
-	"vitoria":   "res://audio/music/music_vitoria.ogg",
+	"menu":     "res://assets/audio/music/music_menu.ogg",
+	"fazenda":  "res://assets/audio/music/music_fazenda.ogg",
+	"cidade":   "res://assets/audio/music/music_cidade.ogg",
+	"loja":     "res://assets/audio/music/music_loja.ogg",
+	"fabrica":  "res://assets/audio/music/music_fabrica.ogg",
+	"boss":     "res://assets/audio/music/music_boss.ogg",
+	"vitoria":  "res://assets/audio/music/music_vitoria.ogg",
 }
 
 const SFX = {
-	"acerto":       "res://audio/sfx/sfx_acerto.ogg",
-	"erro":         "res://audio/sfx/sfx_erro.ogg",
-	"level_up":     "res://audio/sfx/sfx_level_up.ogg",
-	"badge":        "res://audio/sfx/sfx_badge.ogg",
-	"compra":       "res://audio/sfx/sfx_compra.ogg",
-	"click":        "res://audio/sfx/sfx_click.ogg",
-	"dano_heroi":   "res://audio/sfx/sfx_dano_heroi.ogg",
-	"dano_boss":    "res://audio/sfx/sfx_dano_boss.ogg",
-	"boss_derrota": "res://audio/sfx/sfx_boss_derrota.ogg",
-	"estrela":      "res://audio/sfx/sfx_estrela.ogg",
-	"avanco":       "res://audio/sfx/sfx_avanco.ogg",
+	"acerto":       "res://assets/audio/sfx/sfx_acerto.ogg",
+	"erro":         "res://assets/audio/sfx/sfx_erro.ogg",
+	"click":        "res://assets/audio/sfx/sfx_click.ogg",
+	"dano_heroi":   "res://assets/audio/sfx/sfx_dano_heroi.ogg",
+	"dano_boss":    "res://assets/audio/sfx/sfx_dano_boss.ogg",
+	"boss_derrota": "res://assets/audio/sfx/sfx_boss_derrota.ogg",
+	"avanco":       "res://assets/audio/sfx/sfx_avanco.ogg",
 }
 
 var _music_player: AudioStreamPlayer = null

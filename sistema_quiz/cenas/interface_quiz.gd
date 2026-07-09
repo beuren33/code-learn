@@ -26,7 +26,7 @@ var modo_combate: bool = false       # painel menor + fundo transparente (deixa 
 
 # O quiz foi desenhado numa tela grande (~1920x1080). Isto encaixa o painel no
 # tamanho real da tela, então a pergunta nunca fica gigante nem estourada.
-const DESIGN := Vector2(1080.0, 1920.0)
+const DESIGN := Vector2(1920.0, 1080.0)
 
 func _ready():
 	botoes_alternativas = grid_opcoes.get_children()
@@ -40,6 +40,7 @@ func _ajustar_escala() -> void:
 	var painel: Control = $fundoEscuro/painelFundo
 	var vp: Vector2 = get_viewport().get_visible_rect().size
 	var s: float = minf(vp.x / DESIGN.x, vp.y / DESIGN.y)
+	s *= 0.8
 	if modo_combate:
 		s *= 0.58
 	painel.pivot_offset = painel.size / 2.0
@@ -99,7 +100,9 @@ func montar_pergunta(indice: int):
 		print("Erro: Esse índice de pergunta não existe no JSON!")
 		return
 	pergunta_atual = banco_perguntas[indice]
-	label_pergunta.text = pergunta_atual["pergunta"]
+	var texto_pergunta: String = pergunta_atual["pergunta"]
+	label_pergunta.text = texto_pergunta
+	label_pergunta.add_theme_font_size_override("font_size", _tamanho_fonte_pergunta(texto_pergunta))
 	for i in range(botoes_alternativas.size()):
 		var botao = botoes_alternativas[i]
 		var label_botao = botao.get_node("Label")
@@ -108,6 +111,19 @@ func montar_pergunta(indice: int):
 		if botao.pressed.is_connected(_ao_clicar_na_resposta):
 			botao.pressed.disconnect(_ao_clicar_na_resposta)
 		botao.pressed.connect(_ao_clicar_na_resposta.bind(i))
+
+
+# Perguntas longas quebram em mais linhas: reduz a fonte pra não estourar o
+# painel nem sobrepor a borda.
+func _tamanho_fonte_pergunta(texto: String) -> int:
+	var tamanho := texto.length()
+	if tamanho > 220:
+		return 34
+	if tamanho > 160:
+		return 42
+	if tamanho > 100:
+		return 50
+	return 62
 
 
 func _ao_clicar_na_resposta(indice_clicado: int):
