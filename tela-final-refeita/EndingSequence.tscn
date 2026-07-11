@@ -1,0 +1,473 @@
+[gd_scene load_steps=11 format=3 uid="uid://c7endseqcine16x9"]
+
+[ext_resource type="Script" path="res://tela-final-refeita/ending_sequence.gd" id="1_script"]
+
+[sub_resource type="Gradient" id="grad_vignette"]
+offsets = PackedFloat32Array(0, 0.62, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.55)
+
+[sub_resource type="GradientTexture2D" id="tex_vignette"]
+gradient = SubResource("grad_vignette")
+width = 1024
+height = 1024
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[sub_resource type="Gradient" id="grad_glow"]
+offsets = PackedFloat32Array(0, 1)
+colors = PackedColorArray(0.35, 0.75, 1, 0.5, 0.35, 0.75, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="tex_glow"]
+gradient = SubResource("grad_glow")
+width = 512
+height = 512
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[sub_resource type="CanvasItemMaterial" id="mat_glow_add"]
+blend_mode = 1
+
+[sub_resource type="Gradient" id="grad_scrim"]
+offsets = PackedFloat32Array(0, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.6)
+
+[sub_resource type="GradientTexture2D" id="tex_scrim"]
+gradient = SubResource("grad_scrim")
+width = 8
+height = 256
+fill_from = Vector2(0.5, 0)
+fill_to = Vector2(0.5, 1)
+
+[sub_resource type="Animation" id="anim_ambient_pulse"]
+resource_name = "ambient_pulse"
+length = 3.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EffectsLayer/GlowOverlay:modulate:a")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.6, 3.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.06, 0.16, 0.06]
+}
+
+[sub_resource type="AnimationLibrary" id="anim_lib"]
+_data = {
+"ambient_pulse": SubResource("anim_ambient_pulse")
+}
+
+[node name="EndingSequence" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="VideoLayer" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="VideoBackdrop" type="ColorRect" parent="VideoLayer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="VideoLayer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand = true
+
+[node name="IntroTextContainer" type="Control" parent="VideoLayer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="IntroScrim" type="TextureRect" parent="VideoLayer/IntroTextContainer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.6
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("tex_scrim")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="CongratulationsLabel" type="Label" parent="VideoLayer/IntroTextContainer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.08
+anchor_top = 0.72
+anchor_right = 0.92
+anchor_bottom = 0.8
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.9, 0.96, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0.05, 0.12, 0.85)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.5)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 72
+text = "Parabéns, você concluiu o jogo!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="ThanksLabel" type="Label" parent="VideoLayer/IntroTextContainer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.08
+anchor_top = 0.82
+anchor_right = 0.92
+anchor_bottom = 0.89
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.8, 0.9, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0.05, 0.12, 0.8)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.45)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 44
+text = "Muito obrigado por jogar."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="CreditsLayer" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="CreditsBackdrop" type="ColorRect" parent="CreditsLayer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.02, 0.03, 0.06, 1)
+
+[node name="CreditsBackground" type="TextureRect" parent="CreditsLayer"]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 6
+
+[node name="BackgroundDarkOverlay" type="ColorRect" parent="CreditsLayer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.32)
+
+[node name="CreditsViewport" type="Control" parent="CreditsLayer"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.34
+anchor_right = 0.99
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="CreditsContainer" type="VBoxContainer" parent="CreditsLayer/CreditsViewport"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_bottom = 40.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="CreditsTitle" type="Label" parent="CreditsLayer/CreditsViewport/CreditsContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.97, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0.45, 0.75, 0.6)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.5)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 92
+text = "CRÉDITOS"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Spacer1" type="Control" parent="CreditsLayer/CreditsViewport/CreditsContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="DevelopersTitle" type="Label" parent="CreditsLayer/CreditsViewport/CreditsContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.45, 0.82, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0.05, 0.12, 0.7)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 50
+text = "Desenvolvedores"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Developer1" type="Label" parent="CreditsLayer/CreditsViewport/CreditsContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.95, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0.03, 0.08, 0.6)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 38
+text = "Gustavo Nunes"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Developer2" type="Label" parent="CreditsLayer/CreditsViewport/CreditsContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.95, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0.03, 0.08, 0.6)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 38
+text = "Pedro Werner"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Developer3" type="Label" parent="CreditsLayer/CreditsViewport/CreditsContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.95, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0.03, 0.08, 0.6)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 38
+text = "João Michels"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Developer4" type="Label" parent="CreditsLayer/CreditsViewport/CreditsContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.95, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0.03, 0.08, 0.6)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 38
+text = "Matheus Beuren"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Spacer2" type="Control" parent="CreditsLayer/CreditsViewport/CreditsContainer"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="ToolsTitle" type="Label" parent="CreditsLayer/CreditsViewport/CreditsContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.45, 0.82, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0.05, 0.12, 0.7)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 50
+text = "Plataformas e Materiais Utilizados"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Tool1" type="Label" parent="CreditsLayer/CreditsViewport/CreditsContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.95, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0.03, 0.08, 0.6)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 38
+text = "Godot"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Tool2" type="Label" parent="CreditsLayer/CreditsViewport/CreditsContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.95, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0.03, 0.08, 0.6)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 38
+text = "Blender"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Tool3" type="Label" parent="CreditsLayer/CreditsViewport/CreditsContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.95, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0.03, 0.08, 0.6)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 38
+text = "Aseprite"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Tool4" type="Label" parent="CreditsLayer/CreditsViewport/CreditsContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.95, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0.03, 0.08, 0.6)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 38
+text = "Piskel"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Spacer3" type="Control" parent="CreditsLayer/CreditsViewport/CreditsContainer"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SupervisionTitle" type="Label" parent="CreditsLayer/CreditsViewport/CreditsContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.45, 0.82, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0.05, 0.12, 0.7)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 50
+text = "Supervisão"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="SupervisorName" type="Label" parent="CreditsLayer/CreditsViewport/CreditsContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.95, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0.03, 0.08, 0.6)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 38
+text = "Giani Carla Ito"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Spacer4" type="Control" parent="CreditsLayer/CreditsViewport/CreditsContainer"]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="FinalThanks" type="Label" parent="CreditsLayer/CreditsViewport/CreditsContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.75, 0.95, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0.5, 0.8, 0.5)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.45)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 60
+text = "Obrigado por jogar"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="EffectsLayer" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ParticlesContainer" type="Node2D" parent="EffectsLayer"]
+
+[node name="AmbientParticles" type="CPUParticles2D" parent="EffectsLayer/ParticlesContainer"]
+position = Vector2(960, 1140)
+emitting = false
+amount = 34
+lifetime = 9.0
+preprocess = 5.0
+emission_shape = 3
+emission_rect_extents = Vector2(980, 8)
+direction = Vector2(0, -1)
+spread = 18.0
+gravity = Vector2(0, -8)
+initial_velocity_min = 12.0
+initial_velocity_max = 40.0
+scale_amount_min = 1.0
+scale_amount_max = 3.0
+color = Color(0.5, 0.8, 1, 0.3)
+
+[node name="GlowOverlay" type="TextureRect" parent="EffectsLayer"]
+material = SubResource("mat_glow_add")
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.55
+anchor_top = 0.1
+anchor_bottom = 0.95
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+modulate = Color(1, 1, 1, 0)
+texture = SubResource("tex_glow")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="VignetteOverlay" type="TextureRect" parent="EffectsLayer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("tex_vignette")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="FadeLayer" type="CanvasLayer" parent="."]
+layer = 100
+
+[node name="FadeRect" type="ColorRect" parent="FadeLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -10.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("anim_lib")
+}
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
