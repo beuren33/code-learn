@@ -497,8 +497,6 @@ func _borda_direita(nome_level: String) -> float:
 	var n := _achar_level(nome_level)
 	# A largura real do Level pode ser 320 ou 640; usa a do nó quando der.
 	var larg: float = tamanho_tela.x
-	if n != null and "get_rect" in n:
-		pass
 	return (n.global_position.x + _largura_level(n) - margem) if n != null else larg
 
 func _centro_x(nome_level: String) -> float:
@@ -512,6 +510,41 @@ func get_personagem() -> Node2D:
 
 func get_aliado() -> Node2D:
 	return _aliado
+
+
+## Repete a caminhada de chegada até o alvo da cena atual — chamado quando o
+## jogador fecha (X) o quiz/minigame e precisa tentar tudo de novo. Recua um
+## pouco e reaproxima, tocando de novo a animação/pose de chegada.
+func repetir_chegada(cena: int) -> void:
+	if _pers == null:
+		return
+	var c: Dictionary = {}
+	for item in _roteiro:
+		if int(item["cena"]) == cena:
+			c = item
+			break
+	if c.is_empty():
+		return
+	var level_nome: String = c["level"]
+	var alvo_x: float
+	if c["anda_ate"] != "":
+		alvo_x = _x_obj(c["anda_ate"], level_nome)
+	elif c["sai_para"] != Lado.CENTRO:
+		alvo_x = _x_borda_saida(level_nome, c["sai_para"])
+	else:
+		return
+	var usa_aliado: bool = c["ally"] and _aliado != null
+	var lado: float = signf(_pers.position.x - alvo_x)
+	if lado == 0.0:
+		lado = 1.0
+	var recuo: float = 48.0
+	_pers.ir_para_x(_pers.position.x + lado * recuo, "")
+	if usa_aliado:
+		_aliado.ir_para_x(_aliado.position.x + lado * recuo, "")
+	await _pers.chegou
+	await _andar_ate(alvo_x, c["anim_parar"], usa_aliado)
+	if c["pose_fim"] != "":
+		_pers.tocar_pose(c["pose_fim"], true)
 
 
 func _largura_level(n: Node) -> float:

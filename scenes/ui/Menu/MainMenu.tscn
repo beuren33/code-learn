@@ -79,9 +79,10 @@ _data = {
 
 [node name="main" type="Control" unique_id=927853596]
 layout_mode = 3
-anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -770.0
+offset_bottom = -428.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_2ysvc")
@@ -98,6 +99,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -682.0
+offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_top = 20
@@ -152,6 +155,18 @@ flat = true
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_e2per")
 
+[node name="Options" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer" unique_id=1483367708]
+layout_mode = 2
+theme = ExtResource("2_iwbf0")
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 50
+text = "OPTIONS"
+flat = true
+
+[node name="HSeparator3" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer" unique_id=1352798272]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_e2per")
+
 [node name="Quit" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer" unique_id=1483367707]
 layout_mode = 2
 theme = ExtResource("2_iwbf0")
@@ -171,6 +186,5 @@ autoplay = &"reveal"
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/Startbtn" to="." method="_on_startbtn_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/Creditos" to="." method="_on_creditos_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/Creditos" to="." method="_on_startbtn_2_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/Quit" to="." method="_on_startbtn_3_pressed"]

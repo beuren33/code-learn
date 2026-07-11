@@ -24,16 +24,13 @@ class_name GerenciadorJogo
 @export var caminho_diretor: NodePath
 
 @export_group("Cenas (preencher depois de copiar para o projeto)")
-@export_file("*.tscn") var cena_quiz: String = "res://sistema_quiz/interface_quiz.tscn"
+@export_file("*.tscn") var cena_quiz: String = "res://interface_quiz.tscn"
 @export_file("*.tscn") var mg_drone: String = ""   # mini_drone.tscn
 @export_file("*.tscn") var mg_fios: String = ""    # minigame_fios.tscn
 @export_file("*.tscn") var mg_led: String = ""     # minigame_circuito.tscn (LED)
 
 @export_group("Combate")
 @export_file("*.tscn") var cena_combate: String = "res://characters/combate/combate.tscn"
-@export_file("*.tres") var inimigo_robo_a: String = "res://characters/skins/inimigos/robo_a.tres"
-@export_file("*.tres") var inimigo_robo_c: String = "res://characters/skins/inimigos/robo_c.tres"
-@export_file("*.tres") var inimigo_boss: String = "res://characters/skins/inimigos/boss_inimigo.tres"
 
 var _dir: Node = null
 var _camada: CanvasLayer = null
@@ -58,8 +55,19 @@ func _ready() -> void:
 # Para cada cena, roda os passos (quiz/minigame) na ordem do PDF e depois libera
 # o personagem para continuar.
 func _na_missao(cena: int) -> void:
-	for passo in _passos_da_cena(cena):
-		await _rodar_passo(passo)
+	# Se o jogador fechar (X) um quiz ou minigame no meio do caminho, reinicia
+	# TODOS os passos dessa cena do zero, em vez de deixar passar.
+	var completo := false
+	while not completo:
+		completo = true
+		for passo in _passos_da_cena(cena):
+			var sucesso: bool = await _rodar_passo(passo)
+			if not sucesso:
+				completo = false
+				break
+		# Cancelou: repete a caminhada/animação de chegada antes de tentar de novo.
+		if not completo and _dir != null and _dir.has_method("repetir_chegada"):
+			await _dir.repetir_chegada(cena)
 	if _dir != null:
 		_dir.call("continuar")
 
@@ -110,11 +118,11 @@ func _luta(inimigo: String, perguntas: Array, boss: bool) -> Dictionary:
 	return {"tipo": "luta", "inimigo": inimigo, "perguntas": perguntas, "boss": boss}
 
 
-func _rodar_passo(passo: Dictionary) -> void:
+func _rodar_passo(passo: Dictionary) -> bool:
 	if passo["tipo"] == "quiz":
 		if not _existe(cena_quiz):
 			push_warning("GerenciadorJogo: cena do quiz não encontrada: %s" % cena_quiz)
-			return
+			return true
 		var q := (load(cena_quiz) as PackedScene).instantiate()
 		_camada.add_child(q)
 		# Mostra a pergunta certa.
@@ -124,11 +132,11 @@ func _rodar_passo(passo: Dictionary) -> void:
 			q.call("montar_pergunta", int(passo["indice"]))
 			if "visible" in q:
 				q.set("visible", true)
-		await _esperar_fim(q)
+		return await _esperar_fim(q)
 	elif passo["tipo"] == "luta":
 		if not _existe(cena_combate):
 			push_warning("GerenciadorJogo: cena de combate não encontrada.")
-			return
+			return true
 		var inimigo := _achar_no_cena(String(passo["inimigo"]))
 		var robo: Node2D = _dir.get_aliado() if _dir != null and _dir.has_method("get_aliado") else null
 		var humano: Node2D = _dir.get_personagem() if _dir != null and _dir.has_method("get_personagem") else null
@@ -136,7 +144,7 @@ func _rodar_passo(passo: Dictionary) -> void:
 		var lutador: Node2D = robo if robo != null else humano
 		if inimigo == null or lutador == null:
 			push_warning("Combate: não achei o lutador ou o inimigo '" + String(passo["inimigo"]) + "'.")
-			return
+			return true
 		var c = (load(cena_combate) as PackedScene).instantiate()
 		c.set("aliado_node", lutador)
 		c.set("personagem_node", humano if humano != lutador else null)
@@ -146,22 +154,40 @@ func _rodar_passo(passo: Dictionary) -> void:
 		c.set("caminho_quiz", cena_quiz)
 		_camada.add_child(c)
 		await _esperar_fim(c)
+		return true
 	else:
 		var caminho: String = passo["cena"]
 		if not _existe(caminho):
 			# Slot de minigame ainda não preenchido: ignora sem travar.
-			return
+			return true
 		var m := (load(caminho) as PackedScene).instantiate()
 		_camada.add_child(m)
-		await _esperar_fim(m)
+		_encolher_para_80_por_cento(m)
+		return await _esperar_fim(m)
+
+
+# Minigames são desenhados na resolução base (1920x1080) preenchendo a tela
+# inteira; aqui encolhemos e centralizamos em 80% do viewport.
+func _encolher_para_80_por_cento(no: Node) -> void:
+	if not (no is Node2D):
+		return
+	var n2d := no as Node2D
+	var vp: Vector2 = get_viewport().get_visible_rect().size
+	n2d.scale = Vector2(0.8, 0.8)
+	n2d.position += vp * 0.1
 
 
 # Espera o quiz/minigame terminar: quando emite "concluido", OU fica invisível,
 # OU é liberado da árvore. Depois remove a instância.
-func _esperar_fim(inst: Node) -> void:
-	var estado := {"pronto": false}
+# Retorna false quando o "concluido" foi emitido com sucesso=false (jogador
+# fechou pelo X) — nesse caso a cena inteira deve ser reiniciada.
+func _esperar_fim(inst: Node) -> bool:
+	var estado := {"pronto": false, "sucesso": true}
 	if inst.has_signal("concluido"):
-		inst.connect("concluido", func(_a = null): estado["pronto"] = true)
+		inst.connect("concluido", func(sucesso = true):
+			estado["pronto"] = true
+			estado["sucesso"] = sucesso
+		)
 	# Dá um quadro para a tela aparecer antes de começar a checar.
 	await get_tree().process_frame
 	await get_tree().process_frame
@@ -172,6 +198,7 @@ func _esperar_fim(inst: Node) -> void:
 	if is_instance_valid(inst):
 		inst.queue_free()
 	await get_tree().process_frame
+	return estado["sucesso"]
 
 
 func _existe(caminho: String) -> bool:
